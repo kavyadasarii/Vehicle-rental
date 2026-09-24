@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Trail Ridge Off-Road</title>
+<meta name="description" content="Get in touch with Trail Ridge Off-Road — ask about rentals, guided tours or trail conditions, or find the trailhead on the map.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../home/style.css">
+<link rel="stylesheet" href="contact.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='24' cy='72' r='15' fill='none' stroke='%23221B14' stroke-width='5'/%3E%3Ccircle cx='24' cy='72' r='4' fill='%23B84E27'/%3E%3Ccircle cx='76' cy='72' r='15' fill='none' stroke='%23221B14' stroke-width='5'/%3E%3Ccircle cx='76' cy='72' r='4' fill='%23B84E27'/%3E%3Cpath d='M24 72 L38 44 L62 44 L76 72' stroke='%23B84E27' stroke-width='7' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M38 44 L38 24' stroke='%23221B14' stroke-width='5' stroke-linecap='round'/%3E%3Cpath d='M28 22 L48 22' stroke='%23221B14' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav-row">
+    <a href="../home/index.html" class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 100 100" fill="none">
+          <circle cx="24" cy="72" r="15" fill="none" stroke="var(--logo-ink)" stroke-width="5"/>
+          <circle cx="24" cy="72" r="4" fill="var(--logo-rust)"/>
+          <circle cx="76" cy="72" r="15" fill="none" stroke="var(--logo-ink)" stroke-width="5"/>
+          <circle cx="76" cy="72" r="4" fill="var(--logo-rust)"/>
+          <path d="M24 72 L38 44 L62 44 L76 72" stroke="var(--logo-rust)" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M38 44 L38 24" stroke="var(--logo-ink)" stroke-width="5" stroke-linecap="round"/>
+          <path d="M28 22 L48 22" stroke="var(--logo-ink)" stroke-width="5" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <span class="logo-word">TRAIL<em>RIDGE</em></span><br>
+        <span class="brand-sub">ATV &amp; Off-Road Rentals</span>
+      </span>
+    </a>
+
+    <nav class="primary">
+      <div class="nav-item">
+        <a href="../home/index.html">Home
+          <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="dropdown">
+          <a href="../home/index.html">Home 1</a>
+          <a href="../home2/home-2.html">Home 2</a>
+        </div>
+      </div>
+      <a href="../rentals/rentals.html">Rentals</a>
+      <a href="../tours/guided-tours.html">Guided Tours</a>
+      <a href="../safety/safety-requirements.html">Safety &amp; Requirements</a>
+      <a href="../contact/contact.html" class="active">Contact</a>
+      <a href="../dashboard/dashboard.html">Dashboard</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="btn btn-outline btn-sm" id="dir-toggle" aria-label="Toggle text direction">RTL</button>
+      <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="4.2"/><path d="M12 3v2.2M12 18.8V21M21 12h-2.2M5.2 12H3M18.4 5.6l-1.5 1.5M7.1 16.9l-1.5 1.5M18.4 18.4l-1.5-1.5M7.1 7.1L5.6 5.6" stroke-linecap="round"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z" stroke-linejoin="round"/></svg>
+      </button>
+      <a href="../login/login.html" class="btn btn-primary btn-sm desktop-only">Login</a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-panel" id="mobile-panel">
+    <details class="mobile-dropdown">
+      <summary>Home</summary>
+      <a href="../home/index.html">Home 1</a>
+      <a href="../home2/home-2.html">Home 2</a>
+    </details>
+    <a href="../rentals/rentals.html">Rentals</a>
+    <a href="../tours/guided-tours.html">Guided Tours</a>
+    <a href="../safety/safety-requirements.html">Safety &amp; Requirements</a>
+    <a href="../contact/contact.html">Contact</a>
+    <a href="../dashboard/dashboard.html">Dashboard</a>
+    <a href="../login/login.html" class="btn btn-primary mobile-login-btn">Login</a>
+  </div>
+</header>
+
+
+<section class="hero contact-hero">
+  <div class="hero-frame">
+    <img src="images/blackridge-contact-hero.jpg" alt="Trail Ridge trailhead building with vehicles parked out front at dusk">
+    <div class="hero-copy">
+      <div class="wrap">
+        <p class="eyebrow-note"><span class="dot"></span>We usually reply within a few hours</p>
+        <h1>Get in touch</h1>
+        <p class="lead">Questions about a rental, a guided tour, or trail conditions before you drive out — send us a note or call the trailhead direct.</p>
+        <div class="hero-ctas">
+          <a href="tel:+919000011111" class="btn btn-primary">Call +91 90000 11111</a>
+          <a href="#contact-form" class="btn btn-ghost">Send a message</a>
+        </div>
+        <ul class="hero-stats">
+          <li><span class="stat-num">&lt;4hrs</span><span class="stat-label">Average reply time</span></li>
+          <li><span class="stat-num">6AM–7PM</span><span class="stat-label">Trailhead hours, daily</span></li>
+          <li><span class="stat-num">10yrs</span><span class="stat-label">Serving Hyderabad riders</span></li>
+          <li><span class="stat-num">Shamirpet</span><span class="stat-label">Trailhead location</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="contact-main">
+  <div class="wrap contact-grid">
+
+    <div class="contact-card contact-form-card">
+      <h2>Send us a message</h2>
+      <p class="card-lead">Fill this out and we'll get back to you — usually the same day.</p>
+
+      <form id="contact-form" novalidate>
+        <div class="form-row">
+          <label for="cf-name">Full name</label>
+          <input type="text" id="cf-name" name="name" autocomplete="name" required>
+        </div>
+
+        <div class="form-row two-col">
+          <div>
+            <label for="cf-email">Email</label>
+            <input type="email" id="cf-email" name="email" autocomplete="email" required>
+          </div>
+          <div>
+            <label for="cf-phone">Phone</label>
+            <input type="tel" id="cf-phone" name="phone" autocomplete="tel">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label for="cf-interest">What's this about?</label>
+          <select id="cf-interest" name="interest">
+            <option>General inquiry</option>
+            <option>Vehicle rental</option>
+            <option>Guided tour booking</option>
+            <option>Multi-day expedition</option>
+            <option>Something else</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="cf-message">Message</label>
+          <textarea id="cf-message" name="message" rows="5" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary form-submit">Send message</button>
+      </form>
+
+      <div class="form-success" id="form-success" hidden>
+        <span class="success-check" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <h3>Message sent</h3>
+        <p>Thanks — someone from the trailhead desk will get back to you shortly.</p>
+      </div>
+    </div>
+
+    <div class="contact-card contact-info-card">
+      <h2>Find us</h2>
+      <p class="card-lead">Based at the Shamirpet trailhead, just outside Hyderabad — easiest to reach by car.</p>
+
+      <ul class="info-list">
+        <li>
+          <strong>Call the trailhead</strong>
+          <a href="tel:+919000011111">+91 90000 11111</a>
+        </li>
+        <li>
+          <strong>Email</strong>
+          <a href="mailto:ride@trailridgeoffroad.in">ride@trailridgeoffroad.in</a>
+        </li>
+        <li>
+          <strong>Address</strong>
+          <span>Shamirpet Trailhead, Hyderabad</span>
+        </li>
+        <li>
+          <strong>Trailhead hours</strong>
+          <span>Mon–Fri, 6:00 AM – 6:00 PM</span>
+          <span>Sat–Sun, 6:00 AM – 7:00 PM</span>
+        </li>
+        <li>
+          <strong>WhatsApp</strong>
+          <a href="https://wa.me/919000011111" target="_blank" rel="noopener">Message the trailhead desk</a>
+        </li>
+      </ul>
+
+      <p class="info-tip">Planning a multi-day trip? Call ahead so we can hold a vehicle for your dates — weekends book out fastest.</p>
+
+      <div class="info-socials">
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="0.8" fill="currentColor" stroke="none"/></svg></a>
+        <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="6" width="18" height="12" rx="4"/><path d="M10.5 9.5l5 2.5-5 2.5z" fill="currentColor" stroke="none"/></svg></a>
+        <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 5l14 14M19 5L5 19" stroke-linecap="round"/></svg></a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="contact-map-section">
+  <div class="wrap">
+    <div class="map-head">
+      <div>
+        <h2>Shamirpet Trailhead</h2>
+        <p>Shamirpet Trailhead, off SH 1, Shamirpet, Hyderabad, Telangana 500078</p>
+      </div>
+      <a href="https://www.google.com/maps/search/?api=1&query=Shamirpet+Trailhead+Hyderabad" target="_blank" rel="noopener" class="btn btn-outline btn-sm">Open in Google Maps</a>
+    </div>
+    <div class="info-map map-wide">
+      <iframe src="https://maps.google.com/maps?q=Shamirpet%2C+Hyderabad&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Map to the Trail Ridge trailhead in Shamirpet, Hyderabad"></iframe>
+    </div>
+  </div>
+</section>
+
+
+<section class="cta-premium" id="call">
+  <div class="wrap">
+
+    <div class="cta-premium-card">
+
+      <div class="cta-premium-image">
+        <img
+          src="images/blackridge-contact-hero.jpg"
+          alt="Trail Ridge trailhead building with off-road vehicles at dusk"
+        >
+        <div class="cta-image-overlay"></div>
+
+        <div class="cta-image-label">
+          <span class="cta-label-dot"></span>
+          Trail Ridge Off-Road
+        </div>
+      </div>
+
+      <div class="cta-premium-content">
+
+        <span class="cta-eyebrow">Prefer to talk it through?</span>
+
+        <h2>
+          Your next trail day
+          <em>starts here.</em>
+        </h2>
+
+        <p>
+          Have questions about availability, group bookings, guided tours,
+          or trail conditions? Talk directly with our trailhead team.
+        </p>
+
+        <div class="cta-actions">
+          <a href="tel:+919000011111" class="btn btn-primary">
+            Call +91 90000 11111
+          </a>
+
+          <a href="../tours/guided-tours.html" class="btn btn-outline">
+            Browse guided tours
+          </a>
+        </div>
+
+        <div class="cta-contact-meta">
+
+          <div class="cta-meta-item">
+            <span class="cta-meta-icon">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M12 7v5l3.5 2"/>
+              </svg>
+            </span>
+            <span>
+              <strong>Trailhead hours</strong>
+              <small>Daily · 6:00 AM – 7:00 PM</small>
+            </span>
+          </div>
+
+          <div class="cta-meta-item">
+            <span class="cta-meta-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0z"/>
+                <circle cx="12" cy="10" r="2.5"/>
+              </svg>
+            </span>
+            <span>
+              <strong>Find us</strong>
+              <small>Shamirpet Trailhead, Hyderabad</small>
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<footer class="site">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a href="../home/index.html" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" fill="none">
+            <circle cx="24" cy="72" r="15" fill="none" stroke="var(--logo-ink)" stroke-width="5"/>
+            <circle cx="24" cy="72" r="4" fill="var(--logo-rust)"/>
+            <circle cx="76" cy="72" r="15" fill="none" stroke="var(--logo-ink)" stroke-width="5"/>
+            <circle cx="76" cy="72" r="4" fill="var(--logo-rust)"/>
+            <path d="M24 72 L38 44 L62 44 L76 72" stroke="var(--logo-rust)" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M38 44 L38 24" stroke="var(--logo-ink)" stroke-width="5" stroke-linecap="round"/>
+            <path d="M28 22 L48 22" stroke="var(--logo-ink)" stroke-width="5" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <span class="logo-word">TRAIL<em>RIDGE</em></span><br>
+          <span class="brand-sub">ATV &amp; Off-Road Rentals</span>
+        </span>
+      </a>
+      <p class="footer-desc" style="margin-top:18px;">ATV, UTV, dirt bike and dune buggy rentals with guided backcountry tours. Fully inspected vehicles, graded trails, and a safety briefing before every ride.</p>
+      <div class="socials">
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="0.8" fill="currentColor" stroke="none"/></svg></a>
+        <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="6" width="18" height="12" rx="4"/><path d="M10.5 9.5l5 2.5-5 2.5z" fill="currentColor" stroke="none"/></svg></a>
+        <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 5l14 14M19 5L5 19" stroke-linecap="round"/></svg></a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Quick links</h4>
+      <ul>
+        <li><a href="../home/index.html">Home</a></li>
+        <li><a href="../rentals/rentals.html">Rentals</a></li>
+        <li><a href="../tours/guided-tours.html">Guided Tours</a></li>
+        <li><a href="../safety/safety-requirements.html">Safety &amp; Requirements</a></li>
+        <li><a href="../contact/contact.html">Contact</a></li>
+        <li><a href="../dashboard/dashboard.html">Dashboard</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+
+      <h4>Rentals</h4>
+
+      <ul>
+        <li><a href="../rentals/rentals.html#atvs">ATVs</a></li>
+        <li><a href="../rentals/rentals.html#utvs">UTVs &amp; Side-by-Sides</a></li>
+        <li><a href="../rentals/rentals.html#dirt-bikes">Dirt Bikes</a></li>
+        <li><a href="../rentals/rentals.html#dune-buggies">Dune Buggies</a></li>
+      </ul>
+
+    </div>
+
+
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li class="contact-line">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.2 1z"/></svg>
+          +91 90000 11111
+        </li>
+        <li class="contact-line">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          ride@trailridgeoffroad.in
+        </li>
+        <li class="contact-line">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s-7-6.1-7-11a7 7 0 0114 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.4"/></svg>
+          Shamirpet Trailhead, Hyderabad
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wrap footer-bottom">
+    <span>© 2026 Trail Ridge Off-Road. All rights reserved.</span>
+    <div class="footer-bottom-links">
+      <a href="../additional-pages/terms.html">Terms</a>
+      <a href="../additional-pages/privacy.html">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../home/script.js"></script>
+<script src="contact.js"></script>
+</body>
+</html>

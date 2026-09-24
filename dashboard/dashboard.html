@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rider Dashboard — Trail Ridge Off-Road</title>
+<meta name="description" content="Rider dashboard: browse available vehicles, book guided or self-drive trail sessions, track rental and return schedules, check safety waiver status, and manage payments.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../home/style.css">
+<link rel="stylesheet" href="dashboard.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='24' cy='72' r='15' fill='none' stroke='%23221B14' stroke-width='5'/%3E%3Ccircle cx='24' cy='72' r='4' fill='%23B84E27'/%3E%3Ccircle cx='76' cy='72' r='15' fill='none' stroke='%23221B14' stroke-width='5'/%3E%3Ccircle cx='76' cy='72' r='4' fill='%23B84E27'/%3E%3Cpath d='M24 72 L38 44 L62 44 L76 72' stroke='%23B84E27' stroke-width='7' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M38 44 L38 24' stroke='%23221B14' stroke-width='5' stroke-linecap='round'/%3E%3Cpath d='M28 22 L48 22' stroke='%23221B14' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
+<div class="dashboard">
+
+  
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <a href="../home/index.html" class="brand" style="display:flex;align-items:center;gap:10px;">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" fill="none">
+            <circle cx="24" cy="72" r="15" fill="none" stroke="var(--logo-ink)" stroke-width="5"/>
+            <circle cx="24" cy="72" r="4" fill="var(--logo-rust)"/>
+            <circle cx="76" cy="72" r="15" fill="none" stroke="var(--logo-ink)" stroke-width="5"/>
+            <circle cx="76" cy="72" r="4" fill="var(--logo-rust)"/>
+            <path d="M24 72 L38 44 L62 44 L76 72" stroke="var(--logo-rust)" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M38 44 L38 24" stroke="var(--logo-ink)" stroke-width="5" stroke-linecap="round"/>
+            <path d="M28 22 L48 22" stroke="var(--logo-ink)" stroke-width="5" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <span class="logo-word">TRAIL<em>RIDGE</em></span><br>
+          <span class="brand-sub">Rider Dashboard</span>
+        </span>
+      </a>
+      <button class="sidebar-close" id="sidebar-close" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 5l14 14M19 5L5 19" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+
+    <nav class="side-nav" aria-label="Dashboard sections">
+      <span class="side-nav-label">Overview</span>
+      <button class="nav-link active" data-section="sec-overview" data-title="Rider Dashboard" data-sub="Your rides, bookings and account at a glance">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="7" height="7" rx="1.2"/><rect x="14" y="3" width="7" height="7" rx="1.2"/><rect x="14" y="14" width="7" height="7" rx="1.2"/><rect x="3" y="14" width="7" height="7" rx="1.2"/></svg>
+        Overview
+      </button>
+
+      <span class="side-nav-label">Rides</span>
+      <button class="nav-link" data-section="sec-browse" data-title="Browse Available Vehicles" data-sub="Check what's free on the date you want to ride">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M15.2 8.8l-1.8 5.2-5.2 1.8 1.8-5.2z" stroke-linejoin="round"/></svg>
+        Browse Vehicles
+      </button>
+      <button class="nav-link" data-section="sec-book" data-title="Book a Trail Session" data-sub="Reserve a guided tour or a self-drive rental">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M10 16h4" stroke-linecap="round"/></svg>
+        Book a Session
+      </button>
+      <button class="nav-link" data-section="sec-bookings" data-title="My Bookings" data-sub="Track pickup and return schedules for every ride">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4V3.5A1.5 1.5 0 0110.5 2h3A1.5 1.5 0 0115 3.5V4M9 11h6M9 14.5h6M9 18h3.5" stroke-linecap="round"/></svg>
+        My Bookings
+        <span class="count">2</span>
+      </button>
+
+      <span class="side-nav-label">Account</span>
+      <button class="nav-link" data-section="sec-waiver" data-title="Safety Waiver" data-sub="Your waiver, ID and emergency contact status">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s-7-3.5-7-10V5l7-3 7 3v6c0 6.5-7 10-7 10z" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Safety Waiver
+      </button>
+      <button class="nav-link" data-section="sec-payments" data-title="Payments &amp; Billing" data-sub="Wallet balance, saved cards and billing history">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+        Payments
+      </button>
+    </nav>
+
+    <div class="sidebar-foot">
+      <div class="sidebar-user">
+        <span class="avatar">AV</span>
+        <span class="who">
+          <strong>Aisha Verma</strong>
+          <span>aisha.verma@example.com</span>
+        </span>
+      </div>
+      <a href="../login/login.html" class="sidebar-logout">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 17l5-5-5-5" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12H9" stroke-linecap="round"/></svg>
+        Log out
+      </a>
+    </div>
+  </aside>
+
+  
+  <div class="dashboard-main">
+
+    <header class="dash-topbar">
+      <div class="topbar-left">
+        <button class="menu-toggle" id="sidebar-toggle" aria-label="Open menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
+        </button>
+        <div>
+          <h1 id="dash-page-title">Rider Dashboard</h1>
+          <p class="topbar-sub" id="dash-page-sub">Your rides, bookings and account at a glance</p>
+        </div>
+      </div>
+
+      <div class="topbar-right">
+        <button class="icon-btn btn-outline" id="dir-toggle" aria-label="Toggle text direction" style="width:auto;padding:0 12px;font-size:12px;font-weight:600;">RTL</button>
+        <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode">
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="4.2"/><path d="M12 3v2.2M12 18.8V21M21 12h-2.2M5.2 12H3M18.4 5.6l-1.5 1.5M7.1 16.9l-1.5 1.5M18.4 18.4l-1.5-1.5M7.1 7.1L5.6 5.6" stroke-linecap="round"/></svg>
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z" stroke-linejoin="round"/></svg>
+        </button>
+
+        <div class="menu-wrap topbar-icon">
+          <button class="icon-btn" data-menu-toggle="notif-panel" aria-label="Notifications">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 8a6 6 0 0112 0c0 5 2 6 2 6H4s2-1 2-6z" stroke-linejoin="round"/><path d="M10 20a2 2 0 004 0"/></svg>
+            <span class="notif-dot"></span>
+          </button>
+          <div class="menu-panel notif-panel" id="notif-panel">
+            <div class="menu-panel-head"><strong>Notifications</strong><span>3 unread</span></div>
+            <div class="notif-item">
+              <span class="dot"></span>
+              <div>
+                <p>Booking <strong>#TR-1041</strong> is confirmed for Sat, 27 Sep.</p>
+                <time>2 hours ago</time>
+              </div>
+            </div>
+            <div class="notif-item">
+              <span class="dot"></span>
+              <div>
+                <p>Your safety waiver renews in 6 months — no action needed yet.</p>
+                <time>Yesterday</time>
+              </div>
+            </div>
+            <div class="notif-item">
+              <span class="dot"></span>
+              <div>
+                <p>Payment of ₹6,200 received for Copper Canyon Full Traverse.</p>
+                <time>2 days ago</time>
+              </div>
+            </div>
+            <div class="notif-item read">
+              <span class="dot"></span>
+              <div>
+                <p>New route added: Ridge Summit Expedition.</p>
+                <time>1 week ago</time>
+              </div>
+            </div>
+            <div class="notif-panel-foot"><a href="#">Mark all as read</a></div>
+          </div>
+        </div>
+
+        <div class="menu-wrap">
+          <button class="profile-btn" data-menu-toggle="profile-panel" aria-label="Profile menu">
+            <span class="avatar">AV</span>
+            <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="menu-panel" id="profile-panel">
+            <div class="menu-panel-head"><strong>Aisha Verma</strong><span>aisha.verma@example.com</span></div>
+            <a href="#" data-goto-section="sec-overview" class="nav-link" style="display:flex;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-7 8-7s8 3 8 7"/></svg>
+              My Profile
+            </a>
+            <a href="#" data-goto-section="sec-payments">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+              Account &amp; Billing
+            </a>
+            <a href="../contact/contact.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 015 0c0 2-2.5 2-2.5 4" stroke-linecap="round"/><path d="M12 17h.01" stroke-linecap="round"/></svg>
+              Help &amp; Support
+            </a>
+            <div class="divider"></div>
+            <a href="../login/login.html" style="color:var(--rust);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 17l5-5-5-5" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12H9" stroke-linecap="round"/></svg>
+              Log out
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="dash-content">
+
+      
+      <section class="dash-section" id="sec-overview">
+        <div class="welcome-banner">
+          <div>
+            <h2>Welcome back, Aisha 👋</h2>
+            <p>You've got a guided tour coming up this weekend and one active rental due back today. Here's everything at a glance.</p>
+          </div>
+          <button class="btn btn-primary" data-goto-section="sec-book">Book a new session</button>
+        </div>
+
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-top">
+              <span class="metric-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span>
+              <span class="metric-trend up">Next in 3 days</span>
+            </div>
+            <div class="metric-num">2</div>
+            <div class="metric-label">Upcoming bookings</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-top">
+              <span class="metric-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+              <span class="metric-trend warn">Due back today</span>
+            </div>
+            <div class="metric-num">1</div>
+            <div class="metric-label">Active rental</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-top">
+              <span class="metric-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 3v18" stroke-linecap="round"/><path d="M5 4h11l-2 4 2 4H5" stroke-linejoin="round"/></svg></span>
+              <span class="metric-trend up">+3 this year</span>
+            </div>
+            <div class="metric-num">14</div>
+            <div class="metric-label">Total rides completed</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-top">
+              <span class="metric-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M16 12h3" stroke-linecap="round"/></svg></span>
+              <span class="metric-trend up">Auto-pay on</span>
+            </div>
+            <div class="metric-num">₹1,250</div>
+            <div class="metric-label">Wallet balance</div>
+          </div>
+        </div>
+
+        <div class="overview-grid">
+          <div class="panel">
+            <div class="panel-head">
+              <h3>Your next session</h3>
+              <a href="#" data-goto-section="sec-bookings">View all bookings</a>
+            </div>
+            <div class="next-booking">
+              <img src="images/blackridge-tour-fulltraverse.jpg" alt="Copper Canyon Full Traverse">
+              <div class="next-booking-info">
+                <span class="badge-mode">Guided tour</span>
+                <h4>Copper Canyon Full Traverse</h4>
+                <ul class="next-booking-meta">
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg> Sat, 27 Sep · 7:00 AM</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="9" cy="8" r="3"/><path d="M2 20c0-3.3 3-6 7-6s7 2.7 7 6"/></svg> 2 riders</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s-7-6.1-7-11a7 7 0 0114 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.4"/></svg> Shamirpet Trailhead</li>
+                </ul>
+                <div class="next-booking-actions">
+                  <button class="btn btn-outline btn-sm" data-goto-section="sec-bookings">View details</button>
+                  <button class="btn btn-sm" style="background:var(--bg);color:var(--text-soft);border:1px solid var(--border);">Reschedule</button>
+                </div>
+              </div>
+            </div>
+            <div class="countdown-strip"><strong>3 days</strong>&nbsp;until pickup — guide Rohan K. will meet you at the trailhead desk.</div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-head"><h3>Quick actions</h3></div>
+            <div class="quick-actions">
+              <button class="quick-action" data-goto-section="sec-browse">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M15.2 8.8l-1.8 5.2-5.2 1.8 1.8-5.2z"/></svg>
+                <span>Browse vehicles by date</span>
+              </button>
+              <button class="quick-action" data-goto-section="sec-book">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M10 16h4"/></svg>
+                <span>Book a guided tour</span>
+              </button>
+              <button class="quick-action" data-goto-section="sec-waiver">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s-7-3.5-7-10V5l7-3 7 3v6c0 6.5-7 10-7 10z"/></svg>
+                <span>Check waiver status</span>
+              </button>
+              <button class="quick-action" data-goto-section="sec-payments">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+                <span>Add a payment method</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel" style="margin-top:18px;">
+          <div class="panel-head">
+            <h3>Recent activity</h3>
+            <a href="#" data-goto-section="sec-bookings">View all</a>
+          </div>
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr><th>Booking</th><th>Activity</th><th>Date</th><th>Status</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>#TR-1041</td>
+                  <td class="wrap-cell">Copper Canyon Full Traverse<span class="cell-sub">Guided tour</span></td>
+                  <td>27 Sep 2026</td>
+                  <td><span class="status-badge upcoming">Upcoming</span></td>
+                </tr>
+                <tr>
+                  <td>#TR-1042</td>
+                  <td class="wrap-cell">Sandy Flats Loop<span class="cell-sub">Self-drive · ATV</span></td>
+                  <td>12 Sep 2026</td>
+                  <td><span class="status-badge completed">Completed</span></td>
+                </tr>
+                <tr>
+                  <td>#TR-1039</td>
+                  <td class="wrap-cell">Ridge Overlook Ride<span class="cell-sub">Guided tour</span></td>
+                  <td>30 Aug 2026</td>
+                  <td><span class="status-badge completed">Completed</span></td>
+                </tr>
+                <tr>
+                  <td>#TR-1035</td>
+                  <td class="wrap-cell">Full Moon Night Ride<span class="cell-sub">Guided tour</span></td>
+                  <td>14 Aug 2026</td>
+                  <td><span class="status-badge cancelled">Cancelled</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+
+      
+      <section class="dash-section" id="sec-browse" hidden>
+        <div class="section-title">
+          <div>
+            <h2>Browse Available Vehicles</h2>
+            <p>Pick a date to see what's free at the Shamirpet trailhead, then reserve straight from here.</p>
+          </div>
+        </div>
+
+        <div class="filters-row">
+          <div class="date-field">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+            <input type="date" value="2026-09-27" aria-label="Select a date">
+          </div>
+          <div class="type-chips">
+            <button class="chip" data-type="all" aria-pressed="true">All types</button>
+            <button class="chip" data-type="atv" aria-pressed="false">ATV</button>
+            <button class="chip" data-type="utv" aria-pressed="false">UTV</button>
+            <button class="chip" data-type="dirtbike" aria-pressed="false">Dirt Bike</button>
+            <button class="chip" data-type="buggy" aria-pressed="false">Dune Buggy</button>
+          </div>
+        </div>
+
+        <div class="vehicle-grid">
+          <article class="vehicle-card" data-type="atv">
+            <div class="vehicle-photo"><img src="images/blackridge-scout250.jpg" alt="Scout 250 ATV"><span class="avail-badge available">Available</span></div>
+            <div class="vehicle-body">
+              <h4>Scout 250</h4>
+              <p class="type">ATV · Beginner-friendly</p>
+              <div class="vehicle-price"><span class="price-num">₹1,100</span><span class="unit">per day</span></div>
+              <button class="btn btn-primary btn-sm">Reserve</button>
+            </div>
+          </article>
+          <article class="vehicle-card" data-type="atv">
+            <div class="vehicle-photo"><img src="images/blackridge-trailblazer.jpg" alt="Trailblazer ATV"><span class="avail-badge available">Available</span></div>
+            <div class="vehicle-body">
+              <h4>Trailblazer</h4>
+              <p class="type">ATV · All-terrain</p>
+              <div class="vehicle-price"><span class="price-num">₹1,400</span><span class="unit">per day</span></div>
+              <button class="btn btn-primary btn-sm">Reserve</button>
+            </div>
+          </article>
+          <article class="vehicle-card" data-type="utv">
+            <div class="vehicle-photo"><img src="images/blackridge-ranger570.jpg" alt="Ranger 570 UTV"><span class="avail-badge available">Available</span></div>
+            <div class="vehicle-body">
+              <h4>Ranger 570</h4>
+              <p class="type">UTV · 2-seat</p>
+              <div class="vehicle-price"><span class="price-num">₹1,800</span><span class="unit">per day</span></div>
+              <button class="btn btn-primary btn-sm">Reserve</button>
+            </div>
+          </article>
+          <article class="vehicle-card" data-type="utv">
+            <div class="vehicle-photo"><img src="images/blackridge-ridge4seat.jpg" alt="Ridge UTV 4-seat"><span class="avail-badge limited">Limited</span></div>
+            <div class="vehicle-body">
+              <h4>Ridge 4-Seat</h4>
+              <p class="type">UTV · 4-seat</p>
+              <div class="vehicle-price"><span class="price-num">₹2,200</span><span class="unit">per day</span></div>
+              <button class="btn btn-primary btn-sm">Reserve</button>
+            </div>
+          </article>
+          <article class="vehicle-card" data-type="dirtbike">
+            <div class="vehicle-photo"><img src="images/blackridge-apex450.jpg" alt="Apex 450 dirt bike"><span class="avail-badge limited">Limited</span></div>
+            <div class="vehicle-body">
+              <h4>Apex 450</h4>
+              <p class="type">Dirt bike · Experienced</p>
+              <div class="vehicle-price"><span class="price-num">₹1,600</span><span class="unit">per day</span></div>
+              <button class="btn btn-primary btn-sm">Reserve</button>
+            </div>
+          </article>
+          <article class="vehicle-card" data-type="dirtbike">
+            <div class="vehicle-photo"><img src="images/blackridge-summit-bike.jpg" alt="Summit dirt bike"><span class="avail-badge available">Available</span></div>
+            <div class="vehicle-body">
+              <h4>Summit</h4>
+              <p class="type">Dirt bike · All-terrain</p>
+              <div class="vehicle-price"><span class="price-num">₹1,500</span><span class="unit">per day</span></div>
+              <button class="btn btn-primary btn-sm">Reserve</button>
+            </div>
+          </article>
+          <article class="vehicle-card" data-type="buggy">
+            <div class="vehicle-photo"><img src="images/blackridge-stormbuggy.jpg" alt="Storm dune buggy"><span class="avail-badge booked">Booked</span></div>
+            <div class="vehicle-body">
+              <h4>Storm Buggy</h4>
+              <p class="type">Dune buggy · 2-seat</p>
+              <div class="vehicle-price"><span class="price-num">₹2,600</span><span class="unit">per day</span></div>
+              <button class="btn btn-sm" disabled style="background:var(--border);color:var(--text-soft);">Unavailable</button>
+            </div>
+          </article>
+          <article class="vehicle-card" data-type="buggy">
+            <div class="vehicle-photo"><img src="images/blackridge-duneracer.jpg" alt="Dune Racer buggy"><span class="avail-badge available">Available</span></div>
+            <div class="vehicle-body">
+              <h4>Dune Racer</h4>
+              <p class="type">Dune buggy · 2-seat</p>
+              <div class="vehicle-price"><span class="price-num">₹2,800</span><span class="unit">per day</span></div>
+              <button class="btn btn-primary btn-sm">Reserve</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+
+      
+      <section class="dash-section" id="sec-book" hidden>
+        <div class="section-title">
+          <div>
+            <h2>Book a Trail Session</h2>
+            <p>Choose a guided tour or a self-drive rental, pick your date and riders, and confirm.</p>
+          </div>
+          <div class="segmented" role="group" aria-label="Session type">
+            <button class="seg-btn" data-mode="guided" aria-pressed="true">Guided Tour</button>
+            <button class="seg-btn" data-mode="self" aria-pressed="false">Self-Drive</button>
+          </div>
+        </div>
+
+        <div class="booking-layout">
+          <div class="panel">
+            <div class="field-row">
+              <div class="field">
+                <label for="book-date">Date</label>
+                <input type="date" id="book-date" value="2026-09-27">
+              </div>
+              <div class="field">
+                <label for="book-time">Time slot</label>
+                <select id="book-time">
+                  <option>7:00 AM — Early trail</option>
+                  <option>10:00 AM — Mid-morning</option>
+                  <option>2:00 PM — Afternoon</option>
+                  <option>4:30 PM — Sunset</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field" data-mode-field="guided">
+              <label for="book-tour">Tour</label>
+              <select id="book-tour">
+                <option>Copper Canyon Full Traverse — ₹6,200/person</option>
+                <option>Ridge Summit Expedition — ₹5,800/person</option>
+                <option>Sandy Flats Sunset Ride — ₹2,600/person</option>
+                <option>Full Moon Night Ride — ₹3,200/person</option>
+              </select>
+            </div>
+            <div class="field" data-mode-field="self" style="display:none;">
+              <label for="book-vehicle">Vehicle</label>
+              <select id="book-vehicle">
+                <option>Trailblazer ATV — ₹1,400/day</option>
+                <option>Ranger 570 UTV — ₹1,800/day</option>
+                <option>Apex 450 Dirt Bike — ₹1,600/day</option>
+                <option>Storm Buggy — ₹2,600/day</option>
+              </select>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="book-riders">Number of riders</label>
+                <select id="book-riders">
+                  <option>1 rider</option>
+                  <option selected>2 riders</option>
+                  <option>3 riders</option>
+                  <option>4 riders</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="book-license">Rider license</label>
+                <select id="book-license">
+                  <option>Aisha Verma — Verified</option>
+                  <option>Add a new rider…</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="book-notes">Notes for your guide (optional)</label>
+              <textarea id="book-notes" placeholder="e.g. first-time rider, food allergy, mobility notes…"></textarea>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-head"><h3>Booking summary</h3></div>
+            <div class="summary-line"><span>Copper Canyon Full Traverse</span><span>Guided tour</span></div>
+            <div class="summary-line"><span>Sat, 27 Sep · 7:00 AM</span><span>2 riders</span></div>
+            <div class="summary-line"><span>Guide fee</span><span>₹1,800</span></div>
+            <div class="summary-line"><span>Vehicle &amp; fuel (×2)</span><span>₹10,600</span></div>
+            <div class="summary-line total"><span>Total due</span><span>₹12,400</span></div>
+            <button class="btn btn-primary">Confirm booking</button>
+            <button class="btn btn-outline">Save as draft</button>
+          </div>
+        </div>
+      </section>
+
+
+      
+      <section class="dash-section" id="sec-bookings" hidden>
+        <div class="section-title">
+          <div>
+            <h2>My Bookings</h2>
+            <p>Every rental and tour, with live pickup and return tracking.</p>
+          </div>
+          <div class="type-chips">
+            <button class="chip" data-status="all" aria-pressed="true">All</button>
+            <button class="chip" data-status="active" aria-pressed="false">Active</button>
+            <button class="chip" data-status="upcoming" aria-pressed="false">Upcoming</button>
+            <button class="chip" data-status="completed" aria-pressed="false">Completed</button>
+            <button class="chip" data-status="cancelled" aria-pressed="false">Cancelled</button>
+          </div>
+        </div>
+
+        <div class="panel" style="margin-bottom:18px;">
+          <div class="panel-head"><h3>Active rental</h3><span class="status-badge active">In progress</span></div>
+          <div class="next-booking">
+            <img src="images/blackridge-trailblazer.jpg" alt="Trailblazer ATV">
+            <div class="next-booking-info">
+              <span class="badge-mode">Self-drive · ATV</span>
+              <h4>Trailblazer — Booking #TR-1040</h4>
+              <ul class="next-booking-meta">
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg> Picked up 26 Sep, 9:00 AM</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg> Due back 27 Sep, 9:00 AM</li>
+              </ul>
+              <div class="progress-bar"><span style="width:70%;"></span></div>
+              <div class="next-booking-actions">
+                <button class="btn btn-outline btn-sm">Extend rental</button>
+                <button class="btn btn-primary btn-sm">Start return check-in</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr><th>Booking</th><th>Vehicle / Tour</th><th>Pickup</th><th>Return</th><th>Status</th><th>Action</th></tr>
+              </thead>
+              <tbody>
+                <tr data-status="active">
+                  <td>#TR-1040</td>
+                  <td class="wrap-cell">Trailblazer<span class="cell-sub">Self-drive · ATV</span></td>
+                  <td>26 Sep, 9:00 AM</td>
+                  <td>27 Sep, 9:00 AM</td>
+                  <td><span class="status-badge active">Active</span></td>
+                  <td><a href="#" class="link-action">Manage</a></td>
+                </tr>
+                <tr data-status="upcoming">
+                  <td>#TR-1041</td>
+                  <td class="wrap-cell">Copper Canyon Full Traverse<span class="cell-sub">Guided tour</span></td>
+                  <td>27 Sep, 7:00 AM</td>
+                  <td>27 Sep, 3:00 PM</td>
+                  <td><span class="status-badge upcoming">Upcoming</span></td>
+                  <td><a href="#" class="link-action">View</a><a href="#" class="link-action">Cancel</a></td>
+                </tr>
+                <tr data-status="completed">
+                  <td>#TR-1042</td>
+                  <td class="wrap-cell">Sandy Flats Loop<span class="cell-sub">Self-drive · ATV</span></td>
+                  <td>12 Sep, 8:00 AM</td>
+                  <td>12 Sep, 10:00 AM</td>
+                  <td><span class="status-badge completed">Completed</span></td>
+                  <td><a href="#" class="link-action">Rebook</a></td>
+                </tr>
+                <tr data-status="completed">
+                  <td>#TR-1039</td>
+                  <td class="wrap-cell">Ridge Overlook Ride<span class="cell-sub">Guided tour</span></td>
+                  <td>30 Aug, 10:00 AM</td>
+                  <td>30 Aug, 1:00 PM</td>
+                  <td><span class="status-badge completed">Completed</span></td>
+                  <td><a href="#" class="link-action">Rebook</a></td>
+                </tr>
+                <tr data-status="cancelled">
+                  <td>#TR-1035</td>
+                  <td class="wrap-cell">Full Moon Night Ride<span class="cell-sub">Guided tour</span></td>
+                  <td>14 Aug, 6:30 PM</td>
+                  <td>14 Aug, 9:30 PM</td>
+                  <td><span class="status-badge cancelled">Cancelled</span></td>
+                  <td><a href="#" class="link-action">Rebook</a></td>
+                </tr>
+                <tr data-status="completed">
+                  <td>#TR-1030</td>
+                  <td class="wrap-cell">Copper Canyon Half-Day<span class="cell-sub">Self-drive · UTV</span></td>
+                  <td>02 Aug, 9:00 AM</td>
+                  <td>02 Aug, 1:00 PM</td>
+                  <td><span class="status-badge completed">Completed</span></td>
+                  <td><a href="#" class="link-action">Rebook</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+
+      
+      <section class="dash-section" id="sec-waiver" hidden>
+        <div class="section-title">
+          <div>
+            <h2>Safety Waiver</h2>
+            <p>Everything you need on file before you can ride is tracked here.</p>
+          </div>
+        </div>
+
+        <div class="waiver-status-card">
+          <span class="waiver-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 21s-7-3.5-7-10V5l7-3 7 3v6c0 6.5-7 10-7 10z"/><path d="M9 12l2 2 4-4"/></svg></span>
+          <div>
+            <h3>Waiver signed <span class="status-badge signed" style="margin-inline-start:6px;">Signed</span></h3>
+            <p>Signed on 14 Mar 2026 · Valid until 14 Mar 2027</p>
+          </div>
+          <a href="#" class="btn btn-outline btn-sm">Download PDF</a>
+        </div>
+
+        <div class="waiver-checklist">
+          <div class="checklist-item">
+            <span class="checklist-icon done"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <div>
+              <strong>Liability waiver signed</strong>
+              <span>Covers all guided tours and self-drive rentals at Trail Ridge.</span>
+            </div>
+          </div>
+          <div class="checklist-item">
+            <span class="checklist-icon done"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <div>
+              <strong>Emergency contact on file</strong>
+              <span>Ravi Verma · +91 90000 22222</span>
+            </div>
+          </div>
+          <div class="checklist-item">
+            <span class="checklist-icon pending"></span>
+            <div>
+              <strong>Government ID verification</strong>
+              <span>Required once for self-drive rentals. Not yet uploaded.</span>
+              <a href="#">Upload ID</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      
+      <section class="dash-section" id="sec-payments" hidden>
+        <div class="section-title">
+          <div>
+            <h2>Payments &amp; Billing</h2>
+            <p>Manage your wallet, saved payment methods and billing history.</p>
+          </div>
+        </div>
+
+        <div class="payments-grid">
+          <div>
+            <div class="wallet-card">
+              <span class="lbl">Wallet balance</span>
+              <div class="amt">₹1,250</div>
+              <p>Auto-reload is on — tops up by ₹1,000 when your balance drops below ₹200.</p>
+              <button class="btn btn-primary">Add funds</button>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-head"><h3>Saved payment methods</h3><button>Add new</button></div>
+            <div class="payment-method">
+              <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></span>
+              <div class="pm-info"><strong>Visa •••• 4242</strong><span>Expires 08/28</span></div>
+              <span class="pm-default">Default</span>
+            </div>
+            <div class="payment-method">
+              <span class="pm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M6 8h12M6 16h12" stroke-linecap="round"/></svg></span>
+              <div class="pm-info"><strong>UPI — aisha@upi</strong><span>Linked 02 Jan 2026</span></div>
+              <a href="#" class="pm-remove">Remove</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel" style="margin-top:18px;">
+          <div class="panel-head"><h3>Billing history</h3></div>
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr><th>Date</th><th>Description</th><th>Amount</th><th>Status</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>25 Sep 2026</td><td class="wrap-cell">Booking #TR-1041 — Copper Canyon Full Traverse</td><td>₹6,200</td><td><span class="status-badge paid">Paid</span></td></tr>
+                <tr><td>26 Sep 2026</td><td class="wrap-cell">Booking #TR-1040 — Trailblazer rental</td><td>₹1,400</td><td><span class="status-badge paid">Paid</span></td></tr>
+                <tr><td>12 Sep 2026</td><td class="wrap-cell">Booking #TR-1042 — Sandy Flats Loop</td><td>₹2,200</td><td><span class="status-badge paid">Paid</span></td></tr>
+                <tr><td>14 Aug 2026</td><td class="wrap-cell">Booking #TR-1035 — Full Moon Night Ride (cancelled)</td><td>₹3,200</td><td><span class="status-badge refunded">Refunded</span></td></tr>
+                <tr><td>02 Aug 2026</td><td class="wrap-cell">Booking #TR-1030 — Copper Canyon Half-Day</td><td>₹3,400</td><td><span class="status-badge paid">Paid</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<script src="../home/script.js"></script>
+<script src="dashboard.js"></script>
+</body>
+</html>

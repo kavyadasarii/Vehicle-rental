@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trail Ridge Off-Road — ATV &amp; Off-Road Vehicle Rentals</title>
+<meta name="description" content="ATV, UTV and dirt bike rentals plus guided backcountry tours. Gear up and hit the trail.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='24' cy='72' r='15' fill='none' stroke='%23221B14' stroke-width='5'/%3E%3Ccircle cx='24' cy='72' r='4' fill='%23B84E27'/%3E%3Ccircle cx='76' cy='72' r='15' fill='none' stroke='%23221B14' stroke-width='5'/%3E%3Ccircle cx='76' cy='72' r='4' fill='%23B84E27'/%3E%3Cpath d='M24 72 L38 44 L62 44 L76 72' stroke='%23B84E27' stroke-width='7' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M38 44 L38 24' stroke='%23221B14' stroke-width='5' stroke-linecap='round'/%3E%3Cpath d='M28 22 L48 22' stroke='%23221B14' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
+</head>
+
+<body>
+
+<header class="site">
+  <div class="wrap nav-row">
+
+    <a href="index.html" class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 100 100" fill="none">
+          <circle cx="24" cy="72" r="15" fill="none" stroke="var(--logo-ink)" stroke-width="5"/>
+          <circle cx="24" cy="72" r="4" fill="var(--logo-rust)"/>
+          <circle cx="76" cy="72" r="15" fill="none" stroke="var(--logo-ink)" stroke-width="5"/>
+          <circle cx="76" cy="72" r="4" fill="var(--logo-rust)"/>
+          <path d="M24 72 L38 44 L62 44 L76 72" stroke="var(--logo-rust)" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M38 44 L38 24" stroke="var(--logo-ink)" stroke-width="5" stroke-linecap="round"/>
+          <path d="M28 22 L48 22" stroke="var(--logo-ink)" stroke-width="5" stroke-linecap="round"/>
+        </svg>
+      </span>
+
+      <span class="brand-text">
+        <span class="logo-word">TRAIL<em>RIDGE</em></span><br>
+        <span class="brand-sub">ATV &amp; Off-Road Rentals</span>
+      </span>
+    </a>
+
+    <nav class="primary">
+
+      <div class="nav-item">
+        <a href="index.html" class="active">
+          Home
+          <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+
+        <div class="dropdown">
+          <a href="index.html">Home 1</a>
+          <a href="../home2/home-2.html">Home 2</a>
+        </div>
+      </div>
+
+      <a href="../rentals/rentals.html">Rentals</a>
+      <a href="../tours/guided-tours.html">Guided Tours</a>
+      <a href="../safety/safety-requirements.html">Safety &amp; Requirements</a>
+      <a href="../contact/contact.html">Contact</a>
+      <a href="../dashboard/dashboard.html">Dashboard</a>
+
+    </nav>
+
+    <div class="nav-actions">
+
+      <button class="btn btn-outline btn-sm" id="dir-toggle" aria-label="Toggle text direction">
+        RTL
+      </button>
+
+      <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+          <circle cx="12" cy="12" r="4.2"/>
+          <path d="M12 3v2.2M12 18.8V21M21 12h-2.2M5.2 12H3M18.4 5.6l-1.5 1.5M7.1 16.9l-1.5 1.5M18.4 18.4l-1.5-1.5M7.1 7.1L5.6 5.6" stroke-linecap="round"/>
+        </svg>
+
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+          <path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <a href="../login/login.html" class="btn btn-primary btn-sm desktop-only">
+        Login
+      </a>
+
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+          <path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+    </div>
+  </div>
+
+  <div class="mobile-panel" id="mobile-panel">
+
+    <details class="mobile-dropdown">
+      <summary>Home</summary>
+      <a href="index.html">Home 1</a>
+      <a href="../home2/home-2.html">Home 2</a>
+    </details>
+
+    <a href="../rentals/rentals.html">Rentals</a>
+    <a href="../tours/guided-tours.html">Guided Tours</a>
+    <a href="../safety/safety-requirements.html">Safety &amp; Requirements</a>
+    <a href="../contact/contact.html">Contact</a>
+    <a href="../dashboard/dashboard.html">Dashboard</a>
+
+    <a href="../login/login.html" class="btn btn-primary mobile-login-btn">
+      Login
+    </a>
+
+  </div>
+</header>
+
+
+<section class="hero" id="top">
+
+  <div class="hero-frame">
+
+    <img src="images/blackridge-hero.jpg" alt="ATV kicking up dust on a desert trail at sunset">
+
+    <div class="hero-copy">
+      <div class="wrap">
+
+        <p class="eyebrow-note">
+          <span class="dot"></span>
+          Rentals &amp; guided tours near Hyderabad
+        </p>
+
+        <h1>Hit the trail, <em>own the ridge</em></h1>
+
+        <p class="lead">
+          Rent an ATV, UTV or dirt bike by the hour or the day, or let one of our guides run you through the backcountry. No experience required — every rental starts with a walkthrough on the vehicle and the trail.
+        </p>
+
+        <div class="hero-ctas">
+          <a href="../contact/contact.html" class="btn btn-primary">
+            Reserve a vehicle
+          </a>
+
+          <a href="../rentals/rentals.html" class="btn btn-ghost">
+            See the fleet
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="stats-float-wrap wrap">
+    <div class="stats-float">
+
+      <div class="stat">
+        <div class="num">40+</div>
+        <div class="lbl">vehicles in the fleet</div>
+      </div>
+
+      <div class="stat">
+        <div class="num">12</div>
+        <div class="lbl">marked trails to ride</div>
+      </div>
+
+      <div class="stat">
+        <div class="num">0</div>
+        <div class="lbl">experience required to start</div>
+      </div>
+
+      <div class="stat">
+        <div class="num">4.8 / 5</div>
+        <div class="lbl">average rider rating</div>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+
+<section class="section" id="about">
+
+  <div class="wrap about-grid">
+
+    <div class="about-photo">
+
+      <img src="images/blackridge-about.jpg" alt="Trail Ridge crew inspecting an ATV before a ride">
+
+      <div class="about-photo-badge">
+        <span class="num">8 yrs</span>
+        <span class="lbl">running trails out of Shamirpet</span>
+      </div>
+
+    </div>
+
+    <div class="about-copy">
+
+      <span class="eyebrow">About Trail Ridge</span>
+
+      <h2>Built by riders, run for riders</h2>
+
+      <p>
+        We started with two ATVs and a borrowed trailer. Today we run a fleet of 40-plus vehicles and a crew of guides who know every rut and river crossing on our trails personally — because they cut most of them.
+      </p>
+
+      <ul class="about-list">
+
+        <li>
+          <span class="check">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+              <path d="M5 12l5 5L19 7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+
+          <span>
+            <strong>Every vehicle inspected daily</strong>
+            <span>Oil, brakes, tires and fuel checked before it ever leaves the yard.</span>
+          </span>
+        </li>
+
+        <li>
+          <span class="check">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+              <path d="M5 12l5 5L19 7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+
+          <span>
+            <strong>No experience needed</strong>
+            <span>Every rental starts with a hands-on walkthrough on flat ground first.</span>
+          </span>
+        </li>
+
+        <li>
+          <span class="check">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+              <path d="M5 12l5 5L19 7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+
+          <span>
+            <strong>Local, trail-graded routes</strong>
+            <span>Twelve marked trails rated by difficulty so you ride what fits your group.</span>
+          </span>
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="section" id="trails" style="padding-top:0;">
+
+  <div class="wrap">
+
+    <div class="section-head center">
+
+      <span class="eyebrow">Trail highlights</span>
+
+      <h2>Three ways to spend the day</h2>
+
+      <p>
+        Every trail is graded before you set out, so you can pick a ride that matches your group — from a first-timer's loop to a ridge run that separates the confident from the careful.
+      </p>
+
+    </div>
+
+    <div class="trail-grid">
+
+      <div class="trail-card">
+
+        <div class="trail-photo">
+          <img src="images/blackridge-trail-sandy-flats.jpg" alt="Wide sandy trail through open scrubland">
+          <span class="difficulty easy">Easy</span>
+        </div>
+
+        <div class="trail-body">
+
+          <h3>Sandy Flats Loop</h3>
+
+          <div class="trail-meta">
+
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M12 21s-7-6.1-7-11a7 7 0 0114 0c0 4.9-7 11-7 11z"/>
+                <circle cx="12" cy="10" r="2.4"/>
+              </svg>
+              9 km
+            </span>
+
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M12 7v5l3.5 2" stroke-linecap="round"/>
+              </svg>
+              ~1 hr
+            </span>
+
+          </div>
+
+          <p>
+            Flat, wide-open ground with no technical sections — the standard first ride for anyone new to a quad.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="trail-card">
+
+        <div class="trail-photo">
+          <img src="images/blackridge-trail-copper-canyon.jpg" alt="Rocky canyon trail with switchbacks">
+          <span class="difficulty moderate">Moderate</span>
+        </div>
+
+        <div class="trail-body">
+
+          <h3>Copper Canyon Run</h3>
+
+          <div class="trail-meta">
+
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M12 21s-7-6.1-7-11a7 7 0 0114 0c0 4.9-7 11-7 11z"/>
+                <circle cx="12" cy="10" r="2.4"/>
+              </svg>
+              21 km
+            </span>
+
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M12 7v5l3.5 2" stroke-linecap="round"/>
+              </svg>
+              ~2.5 hrs
+            </span>
+
+          </div>
+
+          <p>
+            Loose gravel switchbacks and a few water crossings — comfortable for riders past their first few outings.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="trail-card">
+
+        <div class="trail-photo">
+          <img src="images/blackridge-trail-widow-maker.jpg" alt="Steep rocky ridge trail at high elevation">
+          <span class="difficulty hard">Hard</span>
+        </div>
+
+        <div class="trail-body">
+
+          <h3>Widow Maker Ridge</h3>
+
+          <div class="trail-meta">
+
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M12 21s-7-6.1-7-11a7 7 0 0114 0c0 4.9-7 11-7 11z"/>
+                <circle cx="12" cy="10" r="2.4"/>
+              </svg>
+              16 km
+            </span>
+
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M12 7v5l3.5 2" stroke-linecap="round"/>
+              </svg>
+              ~3 hrs
+            </span>
+
+          </div>
+
+          <p>
+            Steep grades and exposed rock ledges. UTV or dirt bike only, and a guide is required — see Safety &amp; Requirements.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="section" id="fleet" style="background:var(--surface); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+
+  <div class="wrap">
+
+    <div class="section-head center">
+
+      <span class="eyebrow">The fleet</span>
+
+      <h2>Pick your ride</h2>
+
+      <p>
+        All vehicles come fueled, inspected and fitted with a helmet in your size. Rent by the hour, the half-day or the full day.
+      </p>
+
+    </div>
+
+    <div class="fleet-grid">
+
+      <a href="../rentals/rentals.html#atvs" class="fleet-card">
+        <img src="images/blackridge-fleet-atv.jpg" alt="Single-rider ATV quad bike">
+
+        <span class="fleet-tag">Single-rider</span>
+
+        <span class="fleet-name">
+          <h3>ATVs</h3>
+          <p>110cc to 450cc quads for solo riders of every skill level.</p>
+          <span class="price">From ₹1,200 / hr</span>
+        </span>
+      </a>
+
+
+      <a href="../rentals/rentals.html#utvs" class="fleet-card">
+        <img src="images/blackridge-fleet-utv.jpg" alt="Two-seat side-by-side UTV">
+
+        <span class="fleet-tag">2–4 seats</span>
+
+        <span class="fleet-name">
+          <h3>UTVs</h3>
+          <p>Side-by-sides with roll cages — bring a passenger along.</p>
+          <span class="price">From ₹2,400 / hr</span>
+        </span>
+      </a>
+
+
+      <a href="../rentals/rentals.html#dirt-bikes" class="fleet-card">
+        <img src="images/blackridge-fleet-dirtbike.jpg" alt="Off-road dirt bike">
+
+        <span class="fleet-tag">Single-rider</span>
+
+        <span class="fleet-name">
+          <h3>Dirt Bikes</h3>
+          <p>Trail and motocross builds for licensed, experienced riders.</p>
+          <span class="price">From ₹1,500 / hr</span>
+        </span>
+      </a>
+
+
+      <a href="../rentals/rentals.html#dune-buggies" class="fleet-card">
+        <img src="images/blackridge-fleet-buggy.jpg" alt="Off-road dune buggy">
+
+        <span class="fleet-tag">2 seats</span>
+
+        <span class="fleet-name">
+          <h3>Dune Buggies</h3>
+          <p>Low-slung and quick — built for sand and loose rock.</p>
+          <span class="price">From ₹2,800 / hr</span>
+        </span>
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="section" id="how-it-works">
+
+  <div class="wrap">
+
+    <div class="section-head center">
+
+      <span class="eyebrow">How it works</span>
+
+      <h2>From booking to trail in four steps</h2>
+
+      <p>
+        No paperwork headaches and no guesswork on arrival — here's exactly what happens between reserving online and pulling out onto the trail.
+      </p>
+
+    </div>
+
+    <div class="steps-grid">
+
+      <div class="step-card">
+        <div class="step-num">01</div>
+        <h3>Book online</h3>
+        <p>Pick your vehicle and a time slot. You'll get a confirmation with what to bring.</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-num">02</div>
+        <h3>Gear up</h3>
+        <p>Show your license at the trailhead desk, sign the waiver, and get fitted for a helmet.</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-num">03</div>
+        <h3>Walkthrough &amp; ride</h3>
+        <p>A guide runs you through the controls on flat ground before you head out on trail.</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-num">04</div>
+        <h3>Return &amp; refuel</h3>
+        <p>Bring it back by your slot's end time — we handle the cleanup and refueling.</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="section" id="reviews" style="background:var(--surface); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+
+  <div class="wrap">
+
+    <div class="section-head center">
+      <span class="eyebrow">Rider reviews</span>
+      <h2>What people say after a ride</h2>
+    </div>
+
+    <div class="testimonial-grid">
+
+      <div class="testimonial-card">
+
+        <div class="testimonial-stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.6 7.2.9-5.3 5 1.4 7.2L12 18.3 5.6 21.7 7 14.5l-5.3-5 7.2-.9z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.6 7.2.9-5.3 5 1.4 7.2L12 18.3 5.6 21.7 7 14.5l-5.3-5 7.2-.9z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.6 7.2.9-5.3 5 1.4 7.2L12 18.3 5.6 21.7 7 14.5l-5.3-5 7.2-.9z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.6 7.2.9-5.3 5 1.4 7.2L12 18.3 5.6 21.7 7 14.5l-5.3-5 7.2-.9z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.6 7.2.9-5.3 5 1.4 7.2L12 18.3 5.6 21.7 7 14.5l-5.3-5 7.2-.9z"/></svg>
+        </div>
+
+        <p class="quote">
+          First time on a quad and the guide had me comfortable within ten minutes. Copper Canyon was the highlight of our trip.
+        </p>
+
+        <div class="testimonial-who">
+          <span>
+            <strong>Aditi R.</strong>
+            <span>Sandy Flats &amp; Copper Canyon</span>
+          </span>
+        </div>
+
+      </div>
+
+
+      <div class="testimonial-card">
+
+        <div class="testimonial-stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.6 7.2.9-5.3 5 1.4 7.2L12 18.3 5.6 21.7 7 14.5l-5.3-5 7.2-.9z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.6 7.2.9-5.3 5 1.4 7.2L12 18.3 5.6 21.7 7 14.5l-5.3-5 7.2-.9z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.6 7.2.9-5.3 5 1.4 7.2L12 18.3 5.6 21.7 7 14.5l-5.3-5 7.2-.9z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.6 7.2.9-5.3 5 1.4 7.2L12 18.3 5.6 21.7 7 14.5l-5.3-5 7.2-.9z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.6 7.2.9-5.3 5 1.4 7.2L12 18.3 5.6 21.7 7 14.5l-5.3-5 7.2-.9z"/></svg>
+        </div>
+
+        <p class="quote">
+          Rented a UTV for the family — vehicle was spotless and the trailhead crew were patient with the kids. We're already booked for next month.
+        </p>
+
+        <div class="testimonial-who">
+          <span>
+            <strong>Karthik M.</strong>
+            <span>UTV, half-day rental</span>
+          </span>
+        </div>
+
+      </div>
+
+
+      <div class="testimonial-card">
+
+        <div class="testimonial-stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.6 7.2.9-5.3 5 1.4 7.2L12 18.3 5.6 21.7 7 14.5l-5.3-5 7.2-.9z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.6 7.2.9-5.3 5 1.4 7.2L12 18.3 5.6 21.7 7 14.5l-5.3-5 7.2-.9z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.6 7.2.9-5.3 5 1.4 7.2L12 18.3 5.6 21.7 7 14.5l-5.3-5 7.2-.9z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.6 7.2.9-5.3 5 1.4 7.2L12 18.3 5.6 21.7 7 14.5l-5.3-5 7.2-.9z"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l3.1 6.6 7.2.9-5.3 5 1.4 7.2L12 18.3 5.6 21.7 7 14.5l-5.3-5 7.2-.9z"/></svg>
+        </div>
+
+        <p class="quote">
+          Widow Maker Ridge lived up to the name. Guide was solid throughout and the dirt bike was well maintained — will be back for the full-day tour.
+        </p>
+
+        <div class="testimonial-who">
+          <span>
+            <strong>Sanjana P.</strong>
+            <span>Guided ridge tour</span>
+          </span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="section" id="faq">
+
+  <div class="wrap">
+
+    <div class="section-head center">
+      <span class="eyebrow">FAQ</span>
+      <h2>Good to know before you book</h2>
+    </div>
+
+    <div class="faq-list">
+
+      <details class="faq-item" open>
+        <summary>
+          Do I need a license or prior riding experience?
+          <span class="plus"></span>
+        </summary>
+        <div class="faq-body">
+          A valid driver's license is required for all rentals. No prior ATV or UTV experience is needed — every rental starts with a guided walkthrough on flat ground before you head out on trail.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          What's the minimum age to ride?
+          <span class="plus"></span>
+        </summary>
+        <div class="faq-body">
+          Riders must be 18 or older to rent a vehicle solo. Younger riders can ride as a passenger on a UTV with a parent or guardian. Full details are on our Safety &amp; Requirements page.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          Can I bring my own helmet or gear?
+          <span class="plus"></span>
+        </summary>
+        <div class="faq-body">
+          Yes — you're welcome to bring your own DOT-approved helmet and riding gear. If not, we provide a helmet, goggles and gloves in your size at no extra cost.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          What happens if it rains on my booking day?
+          <span class="plus"></span>
+        </summary>
+        <div class="faq-body">
+          We'll call you the morning of your slot if trail conditions are unsafe and help you reschedule free of charge — no cancellation fee for weather.
+        </div>
+      </details>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="section trial-section" id="trial" style="position:relative; overflow:hidden;">
+
+  <div class="bg-photo" style="position:absolute; inset:0;">
+    <img src="images/blackridge-cta.jpg" alt="Rider silhouetted against a dusty sunset trail" style="width:100%; height:100%; object-fit:cover;">
+  </div>
+
+  <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(20,15,9,.90) 0%, rgba(20,15,9,.80) 100%);"></div>
+
+  <div class="wrap" style="position:relative; z-index:1; text-align:center;">
+
+    <span class="eyebrow" style="color:var(--rust-soft); display:block; font-size:13px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; margin-bottom:16px;">
+      Ready to ride
+    </span>
+
+    <h2 style="font-size:clamp(30px,3.8vw,50px); color:#FAF5E7; max-width:20ch; margin:0 auto;">
+      Book your vehicle before the weekend fills up
+    </h2>
+
+    <p style="margin:18px auto 0; max-width:52ch; font-size:16.5px; color:#D9CDAE; line-height:1.65;">
+      Reserve online in a couple of minutes, or call the trailhead desk and we'll hold a vehicle for you.
+    </p>
+
+    <div class="hero-ctas" style="margin-top:32px;">
+      <a href="../contact/contact.html" class="btn btn-primary">
+        Reserve a vehicle
+      </a>
+
+      <a href="../login/login.html" class="btn btn-ghost">
+        Manage a booking
+      </a>
+    </div>
+
+  </div>
+
+</section>
+
+
+<footer class="site">
+
+  <div class="wrap footer-grid">
+
+    <div class="footer-brand">
+
+      <a href="index.html" class="brand">
+
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" fill="none">
+            <circle cx="24" cy="72" r="15" fill="none" stroke="var(--logo-ink)" stroke-width="5"/>
+            <circle cx="24" cy="72" r="4" fill="var(--logo-rust)"/>
+            <circle cx="76" cy="72" r="15" fill="none" stroke="var(--logo-ink)" stroke-width="5"/>
+            <circle cx="76" cy="72" r="4" fill="var(--logo-rust)"/>
+            <path d="M24 72 L38 44 L62 44 L76 72" stroke="var(--logo-rust)" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M38 44 L38 24" stroke="var(--logo-ink)" stroke-width="5" stroke-linecap="round"/>
+            <path d="M28 22 L48 22" stroke="var(--logo-ink)" stroke-width="5" stroke-linecap="round"/>
+          </svg>
+        </span>
+
+        <span class="brand-text">
+          <span class="logo-word">TRAIL<em>RIDGE</em></span><br>
+          <span class="brand-sub">ATV &amp; Off-Road Rentals</span>
+        </span>
+
+      </a>
+
+      <p class="footer-desc" style="margin-top:18px;">
+        ATV, UTV, dirt bike and dune buggy rentals with guided backcountry tours. Fully inspected vehicles, graded trails, and a safety briefing before every ride.
+      </p>
+
+      <div class="socials">
+
+        <a href="#" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <rect x="3.5" y="3.5" width="17" height="17" rx="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17" cy="7" r="0.8" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
+
+        <a href="#" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <rect x="3" y="6" width="18" height="12" rx="4"/>
+            <path d="M10.5 9.5l5 2.5-5 2.5z" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
+
+        <a href="#" aria-label="X">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M5 5l14 14M19 5L5 19" stroke-linecap="round"/>
+          </svg>
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-col">
+
+      <h4>Quick links</h4>
+
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="../rentals/rentals.html">Rentals</a></li>
+        <li><a href="../tours/guided-tours.html">Guided Tours</a></li>
+        <li><a href="../safety/safety-requirements.html">Safety &amp; Requirements</a></li>
+        <li><a href="../contact/contact.html">Contact</a></li>
+        <li><a href="../dashboard/dashboard.html">Dashboard</a></li>
+      </ul>
+
+    </div>
+
+
+    <div class="footer-col">
+
+      <h4>Rentals</h4>
+
+      <ul>
+        <li><a href="../rentals/rentals.html#atvs">ATVs</a></li>
+        <li><a href="../rentals/rentals.html#utvs">UTVs &amp; Side-by-Sides</a></li>
+        <li><a href="../rentals/rentals.html#dirt-bikes">Dirt Bikes</a></li>
+        <li><a href="../rentals/rentals.html#dune-buggies">Dune Buggies</a></li>
+      </ul>
+
+    </div>
+
+
+    <div class="footer-col">
+
+      <h4>Contact</h4>
+
+      <ul>
+
+        <li class="contact-line">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+            <path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.2 1z"/>
+          </svg>
+          +91 90000 11111
+        </li>
+
+        <li class="contact-line">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+            <rect x="3" y="5" width="18" height="14" rx="2"/>
+            <path d="M3 7l9 6 9-6"/>
+          </svg>
+          ride@trailridgeoffroad.in
+        </li>
+
+        <li class="contact-line">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+            <path d="M12 21s-7-6.1-7-11a7 7 0 0114 0c0 4.9-7 11-7 11z"/>
+            <circle cx="12" cy="10" r="2.4"/>
+          </svg>
+          Shamirpet Trailhead, Hyderabad
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+
+  <div class="wrap footer-bottom">
+
+    <span>
+      © 2026 Trail Ridge Off-Road. All rights reserved.
+    </span>
+
+    <div class="footer-bottom-links">
+      <a href="../additional-pages/terms.html">Terms</a>
+      <a href="../additional-pages/privacy.html">Privacy</a>
+    </div>
+
+  </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

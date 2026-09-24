@@ -1,0 +1,156 @@
+/* =======================================================================
+   TRAIL RIDGE — Auth pages (login / signup)
+   Loaded after style.css — reuses its tokens, fonts and .btn/.icon-btn
+   classes. Adds only what login/signup need, plus a no-scroll layout.
+   ======================================================================= */
+
+html.auth-html, .auth-html body{ height: 100%; }
+body.auth-page{
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+}
+
+.top-controls{
+  position: fixed;
+  top: 22px;
+  right: 26px;
+  display: flex;
+  gap: 10px;
+  z-index: 5;
+}
+html[dir="rtl"] .top-controls{ right: auto; left: 26px; }
+
+.auth-main{
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 20px;
+  overflow-y: auto;
+}
+
+.auth-card{
+  width: 100%;
+  max-width: 460px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: 30px 36px 26px;
+  position: relative;
+}
+.auth-card.wide{ max-width: 620px; }
+.auth-card::before{
+  content: "";
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: var(--rust);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.auth-brand{
+  display: flex; align-items: center; justify-content: center;
+  gap: 12px; margin-bottom: 18px;
+}
+.auth-brand .brand-mark{ width: 48px; height: 48px; flex: none; }
+.auth-brand .brand-text{ text-align: left; line-height: 1.15; }
+html[dir="rtl"] .auth-brand .brand-text{ text-align: right; }
+.auth-brand .logo-word{ font-size: 24px; }
+.auth-brand .brand-sub{ font-size: 10.5px; }
+
+.auth-heading{ text-align: center; margin-bottom: 18px; }
+.auth-heading h1{ font-size: 25px; letter-spacing: .015em; color: var(--text); }
+.auth-heading p{ margin-top: 6px; font-size: 12.8px; color: var(--text-soft); line-height: 1.5; }
+
+form.auth-form{ display: flex; flex-direction: column; gap: 13px; }
+
+.field-row{ display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
+
+.field label{
+  display: block; font-size: 11.5px; font-weight: 600; letter-spacing: .01em;
+  color: var(--text); margin-bottom: 5px;
+}
+.field-wrap{ position: relative; }
+.field input{
+  width: 100%; height: 41px; padding: 0 13px;
+  border-radius: var(--radius); border: 1px solid var(--border);
+  background: var(--bg); color: var(--text);
+  font-family: 'Barlow', sans-serif; font-size: 13.5px;
+  outline: none; transition: border-color .2s ease, box-shadow .2s ease;
+}
+.field input::placeholder{ color: var(--text-soft); opacity: .75; }
+.field input:focus{ border-color: var(--rust); box-shadow: 0 0 0 3px rgba(184,78,39,.15); }
+
+.pw-toggle{
+  position: absolute; top: 50%; right: 12px; transform: translateY(-50%);
+  background: none; border: none; padding: 0; cursor: pointer; color: var(--text-soft);
+  display: flex;
+}
+.pw-toggle:hover{ color: var(--rust); }
+.pw-toggle svg{ width: 16px; height: 16px; }
+
+.checkline{
+  display: flex; align-items: flex-start; gap: 8px;
+  font-size: 11.8px; color: var(--text-soft); line-height: 1.5;
+}
+.checkline input{ margin-top: 2px; width: 14px; height: 14px; accent-color: var(--rust); flex: none; }
+.checkline a{ color: var(--rust); font-weight: 600; }
+.checkline a:hover{ text-decoration: underline; }
+
+.row-between{ display: flex; align-items: center; justify-content: space-between; font-size: 12.3px; }
+.remember{ display: flex; align-items: center; gap: 6px; color: var(--text-soft); }
+.remember input{ accent-color: var(--rust); width: 13px; height: 13px; }
+.link{ color: var(--rust); font-weight: 600; }
+.link:hover{ text-decoration: underline; }
+
+.auth-submit{ width: 100%; height: 44px; margin-top: 2px; }
+
+.auth-divider{
+  display: flex; align-items: center; gap: 10px; margin: 16px 0 13px;
+  color: var(--text-soft); font-size: 11px; font-weight: 600;
+  letter-spacing: .06em; text-transform: uppercase;
+}
+.auth-divider::before, .auth-divider::after{ content: ""; flex: 1; height: 1px; background: var(--border); }
+
+.social-row{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.social-btn{
+  height: 40px; border-radius: var(--radius); border: 1px solid var(--border);
+  background: var(--surface); color: var(--text);
+  font-family: 'Barlow', sans-serif; font-size: 12.3px; font-weight: 600;
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  transition: border-color .2s ease, background .2s ease;
+}
+.social-btn:hover{ border-color: var(--rust); background: var(--bg); }
+.social-btn svg{ width: 15px; height: 15px; flex: none; }
+
+.auth-foot{ text-align: center; margin-top: 16px; font-size: 12.3px; color: var(--text-soft); }
+
+.auth-back{
+  display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px;
+  font-weight: 500; color: var(--text-soft);
+}
+.auth-back:hover{ color: var(--rust); }
+.auth-back svg{ width: 13px; height: 13px; }
+
+
+@media (max-height: 760px){
+  .auth-card{ padding: 20px 32px 18px; }
+  .auth-brand{ margin-bottom: 10px; }
+  .auth-brand .brand-mark{ width: 38px; height: 38px; }
+  .auth-heading{ margin-bottom: 12px; }
+  form.auth-form{ gap: 9px; }
+  .field-row{ gap: 9px; }
+  .field input{ height: 37px; }
+  .auth-divider{ margin: 11px 0 9px; }
+  .auth-foot{ margin-top: 11px; }
+}
+
+@media (max-width: 520px){
+  .field-row{ grid-template-columns: 1fr; }
+  .social-row{ grid-template-columns: 1fr; }
+  .auth-card{ padding: 24px 22px 20px; }
+  .top-controls{ top: 14px; right: 14px; }
+  html[dir="rtl"] .top-controls{ right: auto; left: 14px; }
+}

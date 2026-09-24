@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guided Tours — Trail Ridge Off-Road</title>
+<meta name="description" content="Half-day, full-day, sunset and multi-day guided ATV and UTV tours from Trail Ridge Off-Road. Every tour includes a lead guide, fueled vehicles and a safety briefing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../home/style.css">
+<link rel="stylesheet" href="guided-tours.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='24' cy='72' r='15' fill='none' stroke='%23221B14' stroke-width='5'/%3E%3Ccircle cx='24' cy='72' r='4' fill='%23B84E27'/%3E%3Ccircle cx='76' cy='72' r='15' fill='none' stroke='%23221B14' stroke-width='5'/%3E%3Ccircle cx='76' cy='72' r='4' fill='%23B84E27'/%3E%3Cpath d='M24 72 L38 44 L62 44 L76 72' stroke='%23B84E27' stroke-width='7' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M38 44 L38 24' stroke='%23221B14' stroke-width='5' stroke-linecap='round'/%3E%3Cpath d='M28 22 L48 22' stroke='%23221B14' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav-row">
+    <a href="../home/index.html" class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 100 100" fill="none">
+          <circle cx="24" cy="72" r="15" fill="none" stroke="var(--logo-ink)" stroke-width="5"/>
+          <circle cx="24" cy="72" r="4" fill="var(--logo-rust)"/>
+          <circle cx="76" cy="72" r="15" fill="none" stroke="var(--logo-ink)" stroke-width="5"/>
+          <circle cx="76" cy="72" r="4" fill="var(--logo-rust)"/>
+          <path d="M24 72 L38 44 L62 44 L76 72" stroke="var(--logo-rust)" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M38 44 L38 24" stroke="var(--logo-ink)" stroke-width="5" stroke-linecap="round"/>
+          <path d="M28 22 L48 22" stroke="var(--logo-ink)" stroke-width="5" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <span class="logo-word">TRAIL<em>RIDGE</em></span><br>
+        <span class="brand-sub">ATV &amp; Off-Road Rentals</span>
+      </span>
+    </a>
+
+    <nav class="primary">
+      <div class="nav-item">
+        <a href="../home/index.html">Home
+          <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="dropdown">
+          <a href="../home/index.html">Home 1</a>
+          <a href="../home2/home-2.html">Home 2</a>
+        </div>
+      </div>
+      <a href="../rentals/rentals.html">Rentals</a>
+      <a href="../tours/guided-tours.html" class="active">Guided Tours</a>
+      <a href="../safety/safety-requirements.html">Safety &amp; Requirements</a>
+      <a href="../contact/contact.html">Contact</a>
+      <a href="../dashboard/dashboard.html">Dashboard</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="btn btn-outline btn-sm" id="dir-toggle" aria-label="Toggle text direction">RTL</button>
+      <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="4.2"/><path d="M12 3v2.2M12 18.8V21M21 12h-2.2M5.2 12H3M18.4 5.6l-1.5 1.5M7.1 16.9l-1.5 1.5M18.4 18.4l-1.5-1.5M7.1 7.1L5.6 5.6" stroke-linecap="round"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z" stroke-linejoin="round"/></svg>
+      </button>
+      <a href="../login/login.html" class="btn btn-primary btn-sm desktop-only">Login</a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-panel" id="mobile-panel">
+    <details class="mobile-dropdown">
+      <summary>Home</summary>
+      <a href="../home/index.html">Home 1</a>
+      <a href="../home2/home-2.html">Home 2</a>
+    </details>
+    <a href="../rentals/rentals.html">Rentals</a>
+    <a href="../tours/guided-tours.html">Guided Tours</a>
+    <a href="../safety/safety-requirements.html">Safety &amp; Requirements</a>
+    <a href="../contact/contact.html">Contact</a>
+    <a href="../dashboard/dashboard.html">Dashboard</a>
+    <a href="../login/login.html" class="btn btn-primary mobile-login-btn">Login</a>
+  </div>
+</header>
+
+
+<section class="hero page-hero">
+  <div class="hero-frame">
+    <img src="images/blackridge-tour-hero.jpg" alt="Guide leading a line of UTVs along a ridge trail at golden hour">
+    <div class="hero-copy">
+      <div class="wrap">
+        <p class="eyebrow-note"><span class="dot"></span>Guided by local trail experts since 2016</p>
+        <h1>Ride with a guide</h1>
+        <p class="lead">From a two-hour sunset loop to a two-day backcountry expedition — every tour includes a lead guide, fueled vehicles, and a safety briefing before you roll out.</p>
+        <ul class="hero-stats">
+          <li><span class="stat-num">4</span><span class="stat-label">Tour lengths</span></li>
+          <li><span class="stat-num">8</span><span class="stat-label">Routes</span></li>
+          <li><span class="stat-num">1:6</span><span class="stat-label">Guide ratio</span></li>
+          <li><span class="stat-num">10yrs</span><span class="stat-label">Running tours</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<div class="catalog-wrap">
+<div class="tour-controls">
+  <div class="wrap controls-row">
+    <nav class="chips" role="group" aria-label="Jump to tour length">
+      <button class="chip" data-goto="half-day" aria-pressed="true">Half-Day</button>
+      <button class="chip" data-goto="full-day" aria-pressed="false">Full-Day</button>
+      <button class="chip" data-goto="sunset" aria-pressed="false">Sunset &amp; Night</button>
+      <button class="chip" data-goto="multi-day" aria-pressed="false">Multi-Day</button>
+    </nav>
+
+    <div class="rate-group">
+      <span class="rate-label" id="rate-label">Show price</span>
+      <div class="segmented" role="group" aria-labelledby="rate-label">
+        <button class="seg-btn" data-rate="person" aria-pressed="true">Per person</button>
+        <button class="seg-btn" data-rate="group" aria-pressed="false">Private group</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<section class="catalog">
+  <div class="wrap">
+
+    
+    <div class="tour-section" id="half-day">
+      <div class="cat-head">
+        <span class="cat-index">01</span>
+        <h2>Half-Day Tours</h2>
+        <p>A morning or afternoon out with a guide, back at the trailhead in time for lunch — the easiest way to see the terrain without committing a full day.</p>
+      </div>
+
+      <div class="tour-grid">
+        <article class="tour-card">
+          <div class="tour-card-photo">
+            <img src="images/blackridge-tour-sandyflats.jpg" alt="Riders on the Sandy Flats Loop">
+            <span class="badge-duration">2 hours</span>
+            <span class="tour-card-index">01</span>
+          </div>
+          <div class="tour-card-body">
+            <h3>Sandy Flats Loop</h3>
+            <span class="skill skill-beginner">Beginner-friendly</span>
+            <p class="desc">A relaxed loop on flat, open ground — the tour we recommend for anyone who's never ridden before.</p>
+            <p class="desc-extra">Your guide covers throttle control and turning basics at the trailhead before you roll out, so this works as a proper first ride rather than just an easy one.</p>
+            <ul class="tour-specs">
+              <li>ATV or UTV</li>
+              <li>Sandy Flats trail</li>
+              <li>6 km loop</li>
+              <li>Up to 6 riders</li>
+            </ul>
+            <div class="tour-card-footer">
+              <span class="price-num" data-person="2200" data-group="7800">₹2,200</span>
+              <span class="price-unit" data-rate-unit>per person</span>
+              <a href="../contact/contact.html" class="btn btn-outline btn-sm">Reserve</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="tour-card">
+          <div class="tour-card-photo">
+            <img src="images/blackridge-tour-overlook.jpg" alt="Rider stopped at the Ridge Overlook">
+            <span class="badge-duration">3 hours</span>
+            <span class="tour-card-index">02</span>
+          </div>
+          <div class="tour-card-body">
+            <h3>Ridge Overlook Ride</h3>
+            <span class="skill skill-intermediate">Some experience</span>
+            <p class="desc">Out to the Ridge Overlook and back, with a stop for photos at the highest point on the property.</p>
+            <p class="desc-extra">The climb has a few loose, rutted sections, so we ask riders to have at least one prior outing under their belt before booking this one.</p>
+            <ul class="tour-specs">
+              <li>ATV or dirt bike</li>
+              <li>Ridge Overlook trail</li>
+              <li>11 km round trip</li>
+              <li>Up to 8 riders</li>
+            </ul>
+            <div class="tour-card-footer">
+              <span class="price-num" data-person="2800" data-group="9800">₹2,800</span>
+              <span class="price-unit" data-rate-unit>per person</span>
+              <a href="../contact/contact.html" class="btn btn-outline btn-sm">Reserve</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="tour-card">
+          <div class="tour-card-photo">
+            <img src="images/blackridge-tour-coppercanyon.jpg" alt="UTV navigating the Copper Canyon switchbacks">
+            <span class="badge-duration">4 hours</span>
+            <span class="tour-card-index">03</span>
+          </div>
+          <div class="tour-card-body">
+            <h3>Copper Canyon Half-Day</h3>
+            <span class="skill skill-intermediate">Some experience</span>
+            <p class="desc">Through Copper Canyon's switchbacks — our most-booked half-day tour, best in a UTV.</p>
+            <p class="desc-extra">Tight switchbacks and a short rock-crawl section make this one more engaging than the other half-day routes, with a water stop at the canyon floor.</p>
+            <ul class="tour-specs">
+              <li>UTV recommended</li>
+              <li>Copper Canyon</li>
+              <li>14 km loop</li>
+              <li>Up to 6 riders</li>
+            </ul>
+            <div class="tour-card-footer">
+              <span class="price-num" data-person="3400" data-group="12000">₹3,400</span>
+              <span class="price-unit" data-rate-unit>per person</span>
+              <a href="../contact/contact.html" class="btn btn-outline btn-sm">Reserve</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    
+    <div class="tour-section" id="full-day">
+      <div class="cat-head">
+        <span class="cat-index">02</span>
+        <h2>Full-Day Tours</h2>
+        <p>A full day on the trail with a guide, lunch included — for riders who want to cover real ground, not just a loop.</p>
+      </div>
+
+      <div class="tour-grid">
+        <article class="tour-card">
+          <div class="tour-card-photo">
+            <img src="images/blackridge-tour-fulltraverse.jpg" alt="Riders crossing the full length of Copper Canyon">
+            <span class="badge-duration">8 hours</span>
+            <span class="tour-card-index">04</span>
+          </div>
+          <div class="tour-card-body">
+            <h3>Copper Canyon Full Traverse</h3>
+            <span class="skill skill-experienced">Experienced riders</span>
+            <p class="desc">The full length of Copper Canyon, end to end, with a trailside lunch stop halfway through.</p>
+            <p class="desc-extra">This is the half-day route stretched to its full length, plus a second canyon system most guests never see. Expect a long, dusty day and a well-earned lunch.</p>
+            <ul class="tour-specs">
+              <li>UTV or dirt bike</li>
+              <li>Guide required</li>
+              <li>38 km one-way</li>
+              <li>Lunch included</li>
+            </ul>
+            <div class="tour-card-footer">
+              <span class="price-num" data-person="6200" data-group="22000">₹6,200</span>
+              <span class="price-unit" data-rate-unit>per person</span>
+              <a href="../contact/contact.html" class="btn btn-outline btn-sm">Reserve</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="tour-card">
+          <div class="tour-card-photo">
+            <img src="images/blackridge-tour-summit.jpg" alt="Riders climbing toward the ridge summit overlook">
+            <span class="badge-duration">7 hours</span>
+            <span class="tour-card-index">05</span>
+          </div>
+          <div class="tour-card-body">
+            <h3>Ridge Summit Expedition</h3>
+            <span class="skill skill-experienced">Experienced riders</span>
+            <p class="desc">A steady climb to the ridge summit overlook and back, with the best views on the property.</p>
+            <p class="desc-extra">Around 600 metres of climbing over loose gravel and rock ledges, rewarded with a summit break where the whole trail system is visible below.</p>
+            <ul class="tour-specs">
+              <li>Dirt bike or ATV</li>
+              <li>Guide required</li>
+              <li>29 km round trip</li>
+              <li>Up to 5 riders</li>
+            </ul>
+            <div class="tour-card-footer">
+              <span class="price-num" data-person="5800" data-group="20500">₹5,800</span>
+              <span class="price-unit" data-rate-unit>per person</span>
+              <a href="../contact/contact.html" class="btn btn-outline btn-sm">Reserve</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    
+    <div class="tour-section" id="sunset">
+      <div class="cat-head">
+        <span class="cat-index">03</span>
+        <h2>Sunset &amp; Night Tours</h2>
+        <p>Golden-hour and after-dark rides for a different feel of the same trails — quieter, cooler, and built around the light.</p>
+      </div>
+
+      <div class="tour-grid">
+        <article class="tour-card">
+          <div class="tour-card-photo">
+            <img src="images/blackridge-tour-sunset.jpg" alt="Riders silhouetted against a golden sunset">
+            <span class="badge-duration">2 hours</span>
+            <span class="tour-card-index">06</span>
+          </div>
+          <div class="tour-card-body">
+            <h3>Sandy Flats Sunset Ride</h3>
+            <span class="skill skill-beginner">Beginner-friendly</span>
+            <p class="desc">An easy ride timed to end at the dune ridge just as the light turns gold — bring a camera.</p>
+            <p class="desc-extra">Same gentle terrain as our daytime beginner loop, just timed differently. We build in a ten-minute stop at the dune ridge for photos before heading back.</p>
+            <ul class="tour-specs">
+              <li>ATV or UTV</li>
+              <li>Starts 90 min before sunset</li>
+              <li>7 km loop</li>
+              <li>Up to 6 riders</li>
+            </ul>
+            <div class="tour-card-footer">
+              <span class="price-num" data-person="2600" data-group="9200">₹2,600</span>
+              <span class="price-unit" data-rate-unit>per person</span>
+              <a href="../contact/contact.html" class="btn btn-outline btn-sm">Reserve</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="tour-card">
+          <div class="tour-card-photo">
+            <img src="images/blackridge-tour-nightride.jpg" alt="UTV riding at night with LED lighting">
+            <span class="badge-duration">3 hours</span>
+            <span class="tour-card-index">07</span>
+          </div>
+          <div class="tour-card-body">
+            <h3>Full Moon Night Ride</h3>
+            <span class="skill skill-intermediate">Some experience</span>
+            <p class="desc">An after-dark ride on LED-equipped vehicles, run on nights around the full moon.</p>
+            <p class="desc-extra">Every vehicle carries auxiliary LED lighting and we run in a tighter formation than daytime tours. Check the calendar when booking — this only runs a few nights each month.</p>
+            <ul class="tour-specs">
+              <li>UTV recommended</li>
+              <li>Headlamp gear included</li>
+              <li>9 km loop</li>
+              <li>Up to 6 riders</li>
+            </ul>
+            <div class="tour-card-footer">
+              <span class="price-num" data-person="3200" data-group="11200">₹3,200</span>
+              <span class="price-unit" data-rate-unit>per person</span>
+              <a href="../contact/contact.html" class="btn btn-outline btn-sm">Reserve</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    
+    <div class="tour-section" id="multi-day">
+      <div class="cat-head">
+        <span class="cat-index">04</span>
+        <h2>Multi-Day Expeditions</h2>
+        <p>An overnight trip into the backcountry with camp, meals and a lead guide handled end to end — the deepest way to see the trail system.</p>
+      </div>
+
+      <div class="tour-grid single">
+        <article class="tour-card">
+          <div class="tour-card-photo">
+            <img src="images/blackridge-tour-expedition.jpg" alt="Camp set up in the backcountry with UTVs parked nearby">
+            <span class="badge-duration">2 days, 1 night</span>
+            <span class="tour-card-index">08</span>
+          </div>
+          <div class="tour-card-body">
+            <h3>Backcountry Two-Day Expedition</h3>
+            <span class="skill skill-experienced">Experienced riders</span>
+            <p class="desc">Two days and one night out, riding between camps with all meals, tents and camping gear provided.</p>
+            <p class="desc-extra">Day one covers roughly 45 km to a riverside camp, where the crew has tents and a hot meal waiting. Day two loops back a different way, so you never repeat trail.</p>
+            <ul class="tour-specs">
+              <li>UTV or dirt bike</li>
+              <li>Camp &amp; meals included</li>
+              <li>~85 km total</li>
+              <li>Max 8 riders</li>
+            </ul>
+            <div class="tour-card-footer">
+              <span class="price-num" data-person="18500" data-group="64000">₹18,500</span>
+              <span class="price-unit" data-rate-unit>per person</span>
+              <a href="../contact/contact.html" class="btn btn-outline btn-sm">Reserve</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</div>
+
+
+<section class="included" id="included">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">What's included</span>
+      <h2>Every tour includes</h2>
+      <p>No hidden line items once you're booked — this is what's already in the price you see above.</p>
+    </div>
+    <div class="include-grid">
+      <div class="include-card">
+        <span class="include-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <h3>A lead guide, the whole way</h3>
+        <p>Every tour rides with a Trail Ridge guide up front and radio support along the route.</p>
+      </div>
+      <div class="include-card">
+        <span class="include-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <h3>Helmet, goggles &amp; gloves</h3>
+        <p>Fitted to your size, or bring your own DOT-approved gear.</p>
+      </div>
+      <div class="include-card">
+        <span class="include-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <h3>Full tank of fuel</h3>
+        <p>Every vehicle leaves the trailhead topped up for the tour's full route.</p>
+      </div>
+      <div class="include-card">
+        <span class="include-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <h3>Pre-ride safety briefing</h3>
+        <p>Controls, hand signals and the day's route, covered before anyone rolls out.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap reqs-wrap">
+    <div class="section-head">
+      <span class="eyebrow">Before you book</span>
+      <h2>What you'll need at the trailhead</h2>
+    </div>
+    <div class="req-grid">
+      <div class="req-card">
+        <span class="req-num">01</span>
+        <h3>Valid license</h3>
+        <p>Required for anyone riding solo. Passengers on a UTV don't need one.</p>
+      </div>
+      <div class="req-card">
+        <span class="req-num">02</span>
+        <h3>18 or older to ride solo</h3>
+        <p>Younger riders can join as a UTV passenger with a parent or guardian.</p>
+      </div>
+      <div class="req-card">
+        <span class="req-num">03</span>
+        <h3>Reasonable fitness</h3>
+        <p>Full-day and multi-day tours involve several hours in the saddle — let us know about any concerns when booking.</p>
+      </div>
+    </div>
+    <a href="../safety/safety-requirements.html" class="btn btn-primary reqs-link">Full safety &amp; requirements</a>
+  </div>
+</section>
+
+
+<section class="guides">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Who's leading</span>
+      <h2>Meet a few of your guides</h2>
+      <p>Every tour is led by someone who rides the trail system on their own time too — not a seasonal hire reading off a route sheet.</p>
+    </div>
+    <div class="guide-grid">
+      <div class="guide-card">
+        <span class="guide-avatar" aria-hidden="true">AK</span>
+        <h3>Arjun Kher</h3>
+        <span class="guide-role">Lead guide, Copper Canyon</span>
+        <p>Nine seasons at Trail Ridge. Arjun built the Copper Canyon Full Traverse route and still tweaks the line every year after the monsoon.</p>
+        <ul class="guide-stats">
+          <li><strong>9yr</strong>guiding</li>
+          <li><strong>1,200+</strong>tours led</li>
+        </ul>
+      </div>
+      <div class="guide-card">
+        <span class="guide-avatar" aria-hidden="true">RM</span>
+        <h3>Rhea Menon</h3>
+        <span class="guide-role">Lead guide, beginner routes</span>
+        <p>A certified off-road instructor who runs most of our Sandy Flats tours. Rhea has a knack for putting first-timers at ease before they even start the engine.</p>
+        <ul class="guide-stats">
+          <li><strong>6yr</strong>guiding</li>
+          <li><strong>900+</strong>tours led</li>
+        </ul>
+      </div>
+      <div class="guide-card">
+        <span class="guide-avatar" aria-hidden="true">DS</span>
+        <h3>Dev Sharma</h3>
+        <span class="guide-role">Lead guide, expeditions</span>
+        <p>Plans and leads the two-day backcountry trips, including camp logistics. Dev also trains every new guide before they take a group out solo.</p>
+        <ul class="guide-stats">
+          <li><strong>11yr</strong>guiding</li>
+          <li><strong>60+</strong>expeditions</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="testimonials">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">From the trail</span>
+      <h2>What riders say afterward</h2>
+    </div>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-stars" aria-hidden="true">
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9l-5.6 3.1 1.4-6.2L1 7.5l6.4-.6z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9l-5.6 3.1 1.4-6.2L1 7.5l6.4-.6z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9l-5.6 3.1 1.4-6.2L1 7.5l6.4-.6z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9l-5.6 3.1 1.4-6.2L1 7.5l6.4-.6z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9l-5.6 3.1 1.4-6.2L1 7.5l6.4-.6z"/></svg>
+        </div>
+        <p>I'd never touched an ATV before the Sandy Flats Loop. Rhea spent ten minutes on the basics and I never once felt out of my depth.</p>
+        <span class="testimonial-who">Priya N.<span>Sandy Flats Loop</span></span>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars" aria-hidden="true">
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9l-5.6 3.1 1.4-6.2L1 7.5l6.4-.6z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9l-5.6 3.1 1.4-6.2L1 7.5l6.4-.6z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9l-5.6 3.1 1.4-6.2L1 7.5l6.4-.6z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9l-5.6 3.1 1.4-6.2L1 7.5l6.4-.6z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9l-5.6 3.1 1.4-6.2L1 7.5l6.4-.6z"/></svg>
+        </div>
+        <p>The Two-Day Expedition was the highlight of our trip to Hyderabad. Camp was already set up when we rolled in — genuinely well run.</p>
+        <span class="testimonial-who">Farhan &amp; Leela<span>Backcountry Two-Day Expedition</span></span>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars" aria-hidden="true">
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9l-5.6 3.1 1.4-6.2L1 7.5l6.4-.6z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9l-5.6 3.1 1.4-6.2L1 7.5l6.4-.6z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9l-5.6 3.1 1.4-6.2L1 7.5l6.4-.6z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9l-5.6 3.1 1.4-6.2L1 7.5l6.4-.6z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9l-5.6 3.1 1.4-6.2L1 7.5l6.4-.6z"/></svg>
+        </div>
+        <p>Did the Full Moon Night Ride on a whim and it's now the thing I tell everyone about. Riding lit trail after dark feels completely different.</p>
+        <span class="testimonial-who">Sanjay R.<span>Full Moon Night Ride</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Good to know</span>
+      <h2>Questions before you book</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Do I need my own gear?<span class="plus" aria-hidden="true"></span></summary>
+        <p>No — helmet, goggles and gloves are included and fitted to you at the trailhead. You're welcome to bring your own DOT-approved helmet if you'd rather ride in your own gear.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I book a tour as a private group?<span class="plus" aria-hidden="true"></span></summary>
+        <p>Yes. Switch the price toggle above to "Private group" to see the flat rate for booking an entire tour to yourselves, regardless of how many riders you bring along.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What happens if it rains?<span class="plus" aria-hidden="true"></span></summary>
+        <p>Light rain doesn't stop a tour — the trails drain well. In heavy weather or lightning, your guide will call it and we'll rebook you at no charge for another day.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How far in advance should I book?<span class="plus" aria-hidden="true"></span></summary>
+        <p>Half-day and sunset tours can often be booked the same week. Full Moon Night Rides and the Two-Day Expedition run on a fixed calendar, so book those at least two weeks out.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is there an age limit?<span class="plus" aria-hidden="true"></span></summary>
+        <p>Riders must be 18 or older to operate a vehicle solo. Younger riders can join as a passenger on a UTV alongside a parent or guardian on select tours.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+
+<section class="cta-photo" id="book">
+  <div class="cta-photo-media">
+    <img src="https://images.unsplash.com/photo-1607020383881-f1f5e0e3383e?auto=format&amp;fit=crop&amp;w=2000&amp;q=80" alt="Off-road vehicle cutting across a desert trail">
+    <div class="cta-photo-scrim"></div>
+  </div>
+  <div class="wrap cta-photo-inner">
+    <div class="cta-photo-copy">
+      <span class="eyebrow">Before you book</span>
+      <h2>Not sure which tour fits?<br>Tell a guide, not a form.</h2>
+      <p>Give us your riding experience and the day you're free. A guide calls you back with the right tour matched to your skill level — no scrolling through eight options on your own.</p>
+    </div>
+    <div class="cta-photo-panel">
+      <form class="cta-photo-form" onsubmit="return false;">
+        <label class="cta-photo-field">
+          <span>Riding experience</span>
+          <select>
+            <option>First time riding</option>
+            <option>Some experience</option>
+            <option>Experienced rider</option>
+          </select>
+        </label>
+        <label class="cta-photo-field">
+          <span>Phone number</span>
+          <input type="tel" placeholder="90000 11111" aria-label="Phone number" required>
+        </label>
+        <button type="submit" class="btn btn-primary cta-photo-submit">Request a callback</button>
+      </form>
+      <span class="cta-photo-divider"><span>or</span></span>
+      <a href="tel:+919000011111" class="cta-photo-call">
+        <span class="cta-photo-call-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.2 1z"/></svg></span>
+        <span class="cta-photo-call-text">
+          <span class="cta-photo-call-label">Or call the trailhead desk</span>
+          <span class="cta-photo-call-num">+91 90000 11111</span>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<footer class="site">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a href="../home/index.html" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" fill="none">
+            <circle cx="24" cy="72" r="15" fill="none" stroke="var(--logo-ink)" stroke-width="5"/>
+            <circle cx="24" cy="72" r="4" fill="var(--logo-rust)"/>
+            <circle cx="76" cy="72" r="15" fill="none" stroke="var(--logo-ink)" stroke-width="5"/>
+            <circle cx="76" cy="72" r="4" fill="var(--logo-rust)"/>
+            <path d="M24 72 L38 44 L62 44 L76 72" stroke="var(--logo-rust)" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M38 44 L38 24" stroke="var(--logo-ink)" stroke-width="5" stroke-linecap="round"/>
+            <path d="M28 22 L48 22" stroke="var(--logo-ink)" stroke-width="5" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <span class="logo-word">TRAIL<em>RIDGE</em></span><br>
+          <span class="brand-sub">ATV &amp; Off-Road Rentals</span>
+        </span>
+      </a>
+      <p class="footer-desc" style="margin-top:18px;">ATV, UTV, dirt bike and dune buggy rentals with guided backcountry tours. Fully inspected vehicles, graded trails, and a safety briefing before every ride.</p>
+      <div class="socials">
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="0.8" fill="currentColor" stroke="none"/></svg></a>
+        <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="6" width="18" height="12" rx="4"/><path d="M10.5 9.5l5 2.5-5 2.5z" fill="currentColor" stroke="none"/></svg></a>
+        <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 5l14 14M19 5L5 19" stroke-linecap="round"/></svg></a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Quick links</h4>
+      <ul>
+        <li><a href="../home/index.html">Home</a></li>
+        <li><a href="../rentals/rentals.html">Rentals</a></li>
+        <li><a href="../tours/guided-tours.html">Guided Tours</a></li>
+        <li><a href="../safety/safety-requirements.html">Safety &amp; Requirements</a></li>
+        <li><a href="../contact/contact.html">Contact</a></li>
+        <li><a href="../dashboard/dashboard.html">Dashboard</a></li>
+      </ul>
+    </div>
+
+       <div class="footer-col">
+
+      <h4>Rentals</h4>
+
+      <ul>
+        <li><a href="../rentals/rentals.html#atvs">ATVs</a></li>
+        <li><a href="../rentals/rentals.html#utvs">UTVs &amp; Side-by-Sides</a></li>
+        <li><a href="../rentals/rentals.html#dirt-bikes">Dirt Bikes</a></li>
+        <li><a href="../rentals/rentals.html#dune-buggies">Dune Buggies</a></li>
+      </ul>
+
+    </div>
+
+
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li class="contact-line">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.2 1z"/></svg>
+          +91 90000 11111
+        </li>
+        <li class="contact-line">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          ride@trailridgeoffroad.in
+        </li>
+        <li class="contact-line">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s-7-6.1-7-11a7 7 0 0114 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.4"/></svg>
+          Shamirpet Trailhead, Hyderabad
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wrap footer-bottom">
+    <span>© 2026 Trail Ridge Off-Road. All rights reserved.</span>
+    <div class="footer-bottom-links">
+      <a href="../additional-pages/terms.html">Terms</a>
+      <a href="../additional-pages/privacy.html">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../home/script.js"></script>
+<script src="guided-tours.js"></script>
+</body>
+</html>

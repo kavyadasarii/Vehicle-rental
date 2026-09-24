@@ -1,0 +1,110 @@
+/* =======================================================================
+   TRAIL RIDGE — Status pages (404 / coming soon)
+   Loaded after style.css (and optionally legal.css, for the shared topbar).
+   ======================================================================= */
+.legal-topbar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 26px 0;
+}
+.legal-topbar .nav-actions{
+  position: fixed;
+  top: 20px; right: 20px;
+  z-index: 50;
+  display: flex; align-items: center; gap: 10px;
+}
+
+html, body{ height: 100%; }
+body.status-body{
+  margin: 0; display: flex; flex-direction: column; overflow: hidden;
+}
+.status-body .legal-topbar{ flex: 0 0 auto; }
+.status-shell{
+  flex: 1 1 auto;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.status-page{
+  padding: 24px 0;
+  text-align: center;
+}
+
+.status-icon{
+  width: 92px; height: 92px;
+  margin: 0 auto 16px;
+}
+
+.status-code{
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(64px, 11vh, 140px);
+  line-height: .9;
+  color: var(--rust);
+  opacity: .16;
+  margin: 0 0 -14px;
+  letter-spacing: .02em;
+}
+
+.status-eyebrow{
+  display: block; font-size: 13px; font-weight: 600; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--rust); margin-bottom: 10px;
+}
+
+.status-title{
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(28px, 4.2vw, 46px);
+  line-height: 1.05;
+  color: var(--text);
+  margin: 0 0 14px;
+}
+
+.status-text{
+  max-width: 460px; margin: 0 auto 26px;
+  font-size: 15.5px; line-height: 1.7; color: var(--text-soft);
+}
+
+.status-actions{
+  display: flex; align-items: center; justify-content: center;
+  gap: 14px; flex-wrap: wrap;
+}
+
+.status-btn{
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 13px 28px; border-radius: 999px;
+  font-size: 14px; font-weight: 700; letter-spacing: .01em;
+  text-decoration: none; border: 1px solid transparent;
+  transition: background .15s ease, color .15s ease, border-color .15s ease;
+}
+.status-btn-primary{
+  background: var(--rust); color: #fff; border-color: var(--rust);
+}
+.status-btn-primary:hover{ background: transparent; color: var(--rust); }
+
+.status-btn-outline{
+  background: transparent; color: var(--text); border-color: var(--border);
+}
+.status-btn-outline:hover{ border-color: var(--rust); color: var(--rust); }
+
+
+.status-form{
+  display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;
+  max-width: 400px; margin: 0 auto 12px;
+}
+.status-form input[type="email"]{
+  flex: 1 1 220px; min-width: 200px;
+  padding: 13px 18px; border-radius: 999px;
+  border: 1px solid var(--border);
+  font-family: inherit; font-size: 14px; color: var(--text);
+  background: var(--surface, #fff);
+}
+.status-form input[type="email"]:focus{ outline: 2px solid var(--rust); outline-offset: 2px; }
+
+.status-note{ font-size: 12.5px; color: var(--text-soft); margin: 0 0 40px; }
+
+@media (max-width: 640px){
+  .status-page{ padding: 60px 0 88px; }
+  .status-actions{ flex-direction: column; }
+  .status-btn{ width: 100%; justify-content: center; }
+}
