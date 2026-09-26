@@ -1,8 +1,3 @@
-/* =======================================================================
-   GUIDED TOURS PAGE — page-specific styles only.
-   Tokens, header, footer, buttons and dark mode live in style.css.
-   Load this file AFTER style.css.
-   ======================================================================= */
 
 .sr-only{
   position:absolute; width:1px; height:1px; padding:0; margin:-1px;
@@ -171,22 +166,22 @@
 .include-card h3{ font-size: 15px; letter-spacing: .01em; }
 .include-card p{ font-size: 13px; line-height: 1.6; color: var(--text-soft); }
 
-.reqs-wrap{ margin-top: 0; padding: 64px 0 72px; border-top: 1px dashed var(--border); }
+.reqs-wrap{ margin-top: 0; padding: 64px 0 20px; border-top: 1px dashed var(--border); }
 .req-grid{ margin-top: 36px; display:grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .req-card{
   padding: 30px 28px; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-lg);
-  text-align: left;
+  text-align: left; transition: box-shadow .22s ease, border-color .22s ease, transform .22s ease;
 }
+.req-card:hover{ box-shadow: var(--shadow); border-color: var(--rust-soft); transform: translateY(-4px); }
 .req-num{ display:block; font-family:'Bebas Neue', sans-serif; font-size: 32px; line-height:1; color: var(--rust-soft); margin-bottom: 10px; }
 .req-card h3{ font-size: 18px; letter-spacing: .01em; }
 .req-card p{ margin-top: 8px; font-size: 13.5px; line-height: 1.6; color: var(--text-soft); }
-.reqs-link{ display:block; width: max-content; margin: 36px auto 0; }
 
 @media (max-width: 980px){
   .included{ padding: 52px 0; }
   .include-grid{ grid-template-columns: repeat(2, 1fr); }
   .req-grid{ grid-template-columns: 1fr; gap: 18px; }
-  .reqs-wrap{ padding: 48px 0 52px; }
+  .reqs-wrap{ padding: 48px 0 16px; }
 }
 @media (max-width: 640px){
   .include-grid{ grid-template-columns: 1fr; }
@@ -196,50 +191,94 @@
 
 .guides{ padding: 88px 0; border-top: 1px solid var(--border); }
 
-.guide-grid{ margin-top: 44px; display:grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
-.guide-card{ display:flex; flex-direction:column; align-items:center; text-align:center; gap: 14px; }
+.guide-grid{ margin-top: 44px; display:grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.guide-card{
+  display:flex; flex-direction:column;
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);
+  overflow:hidden; transition: box-shadow .22s ease, border-color .22s ease, transform .22s ease;
+}
+.guide-card:hover{ box-shadow: var(--shadow); border-color: var(--rust-soft); transform: translateY(-4px); }
+
+.guide-card-photo{ position:relative; aspect-ratio: 4 / 3; background: var(--bg); overflow:hidden; }
+.guide-card-photo img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition: transform .5s ease; }
+.guide-card:hover .guide-card-photo img{ transform: scale(1.07); }
+.guide-photo-tag{
+  position:absolute; bottom: 14px; inset-inline-start: 14px;
+  font-size: 10.5px; font-weight: 700; letter-spacing:.04em; text-transform:uppercase; color: #EDE0C2;
+  background: rgba(20,15,9,.78); padding: 5px 10px; border-radius: 999px;
+}
+
+.guide-card-body{ flex:1; display:flex; flex-direction:column; gap: 14px; padding: 22px 26px 26px; text-align:left; }
+.guide-card-top{ display:flex; align-items:center; gap: 14px; }
 .guide-avatar{
-  width: 64px; height: 64px; border-radius: 50%; margin: 0 auto;
+  width: 46px; height: 46px; border-radius: 50%; flex: none;
   display:flex; align-items:center; justify-content:center;
-  font-family:'Bebas Neue', sans-serif; font-size: 22px; letter-spacing:.02em;
+  font-family:'Bebas Neue', sans-serif; font-size: 16px; letter-spacing:.02em;
   background: var(--ink); color: var(--ink-contrast);
 }
-.guide-card h3{ font-size: 17px; }
-.guide-role{ display:block; margin-top: -8px; font-size: 12px; font-weight: 600; color: var(--rust); }
+.guide-id{ min-width: 0; }
+.guide-card h3{ font-size: 17px; line-height: 1.2; }
+.guide-role{ display:block; margin-top: 3px; font-size: 11.5px; font-weight: 700; letter-spacing:.03em; text-transform: uppercase; color: var(--rust); }
 .guide-card p{ font-size: 13.5px; line-height: 1.65; color: var(--text-soft); }
-.guide-stats{ display:flex; justify-content:center; gap: 18px; margin-top: 4px; font-size: 12px; color: var(--text-soft); }
-.guide-stats li{ text-align:center; }
-.guide-stats strong{ display:block; font-family:'Bebas Neue', sans-serif; font-size: 18px; color: var(--text); letter-spacing:.02em; }
+.guide-stats{
+  display:flex; gap: 26px; margin-top: auto; padding-top: 16px;
+  border-top: 1px solid var(--border); font-size: 12px; color: var(--text-soft);
+}
+.guide-stats li{ text-align:left; }
+.guide-stats strong{ display:block; font-family:'Bebas Neue', sans-serif; font-size: 19px; color: var(--rust); letter-spacing:.02em; }
 
-@media (max-width: 900px){ .guide-grid{ grid-template-columns: 1fr; gap: 34px; } }
+@media (max-width: 900px){ .guide-grid{ grid-template-columns: 1fr; gap: 20px; max-width: 460px; margin-left:auto; margin-right:auto; } }
 
 
 
 .testimonials{ padding: 88px 0; background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .testimonial-grid{ margin-top: 44px; display:grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
 .testimonial-card{
-  padding: 26px 24px; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-lg);
-  display:flex; flex-direction:column; align-items:center; text-align:center; gap: 14px;
+  padding: 28px 26px; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-lg);
+  display:flex; flex-direction:column; align-items:flex-start; text-align:left; gap: 16px;
+  transition: box-shadow .22s ease, border-color .22s ease, transform .22s ease;
 }
-.testimonial-stars{ display:flex; justify-content:center; gap: 3px; color: var(--rust); }
+.testimonial-card:hover{ box-shadow: var(--shadow); border-color: var(--rust-soft); transform: translateY(-4px); }
+.testimonial-stars{ display:flex; gap: 3px; color: var(--rust); }
 .testimonial-stars svg{ width: 14px; height: 14px; }
 .testimonial-card p{ font-size: 14px; line-height: 1.7; color: var(--text); }
-.testimonial-who{ margin-top: auto; font-size: 12.5px; font-weight: 600; color: var(--text-soft); }
-.testimonial-who span{ display:block; margin-top: 2px; font-weight: 400; }
+.testimonial-who{ display:flex; align-items:center; gap: 12px; margin-top: auto; padding-top: 14px; border-top: 1px solid var(--border); width: 100%; }
+.testimonial-who-text{ font-size: 12.5px; font-weight: 600; color: var(--text-soft); }
+.testimonial-who-text span{ display:block; margin-top: 2px; font-weight: 400; }
 
 @media (max-width: 900px){ .testimonial-grid{ grid-template-columns: 1fr; } }
 
 
 
 .faq{ padding: 88px 0; }
-.faq-list{ margin: 40px auto 0; max-width: 760px; text-align: left; border-top: 1px solid var(--border); }
-.faq-item{ border-bottom: 1px solid var(--border); }
+.faq-layout{ display:grid; grid-template-columns: 0.82fr 1.18fr; gap: 52px; align-items: stretch; }
+
+.faq-media{ position:relative; border-radius: var(--radius-lg); overflow:hidden; min-height: 380px; background: var(--bg); }
+.faq-media img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.faq-media-scrim{ position:absolute; inset:0; background: linear-gradient(0deg, rgba(20,15,10,.85) 0%, rgba(20,15,10,.15) 55%, rgba(20,15,10,0) 80%); }
+.faq-media-note{ position:absolute; left:0; right:0; bottom:0; z-index:1; padding: 26px 26px 24px; }
+.faq-media-note strong{ display:block; font-family:'Bebas Neue', sans-serif; font-size: 22px; letter-spacing:.02em; color: #FAF5E7; }
+.faq-media-note span{ display:block; margin-top: 8px; font-size: 13px; line-height: 1.6; color: rgba(250,245,231,.82); max-width: 34ch; }
+
+.faq-content{ min-width: 0; }
+.faq-head{ text-align: left; margin: 0 0 8px; max-width: none; }
+.faq-head p{ margin-top: 10px; }
+
+.faq-list{ margin: 32px auto 0; max-width: none; text-align: left; border-top: 1px solid var(--border); }
+
+@media (max-width: 900px){
+  .faq-layout{ grid-template-columns: 1fr; gap: 28px; }
+  .faq-media{ min-height: 220px; order: -1; }
+}
+.faq-item{ border-bottom: 1px solid var(--border); transition: background .2s ease; }
 .faq-item summary{
-  list-style:none; cursor:pointer; padding: 20px 4px;
+  list-style:none; cursor:pointer; padding: 20px 22px;
   display:flex; align-items:center; justify-content:space-between; gap: 20px;
   font-size: 15.5px; font-weight: 600; color: var(--text);
+  transition: color .2s ease;
 }
 .faq-item summary::-webkit-details-marker{ display:none; }
+.faq-item:hover summary{ color: var(--rust); }
 .faq-item summary .plus{
   flex: none; width: 22px; height: 22px; position:relative;
 }
@@ -250,7 +289,7 @@
 .faq-item summary .plus::before{ width: 14px; height: 2px; }
 .faq-item summary .plus::after{ width: 2px; height: 14px; transition: transform .2s ease; }
 .faq-item[open] summary .plus::after{ transform: translate(-50%,-50%) rotate(90deg) scaleX(0); }
-.faq-item p{ margin: -6px 4px 22px; max-width: 62ch; font-size: 14px; line-height: 1.7; color: var(--text-soft); }
+.faq-item p{ margin: -6px 22px 22px; max-width: 62ch; font-size: 14px; line-height: 1.7; color: var(--text-soft); }
 
 
 

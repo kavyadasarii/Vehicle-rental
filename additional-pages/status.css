@@ -1,7 +1,3 @@
-/* =======================================================================
-   TRAIL RIDGE — Status pages (404 / coming soon)
-   Loaded after style.css (and optionally legal.css, for the shared topbar).
-   ======================================================================= */
 .legal-topbar{
   display: flex;
   align-items: center;

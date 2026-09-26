@@ -218,6 +218,7 @@
 }
 .cta-photo-inner{ position:relative; z-index:1; display:grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items:center; }
 .cta-photo-copy .eyebrow{ color: #E8A177; }
+.cta-photo-copy .eyebrow .dot{ background: #E8A177; }
 .cta-photo-copy h2{ margin-top: 10px; color: #FAF5E7; font-size: clamp(30px, 3.6vw, 46px); line-height:1.12; max-width: 12ch; }
 .cta-photo-copy p{ margin-top: 16px; font-size: 15.5px; color: rgba(250,245,231,.8); line-height: 1.65; max-width: 40ch; }
 

@@ -1,18 +1,8 @@
-/* =======================================================================
-   RENTALS PAGE — page-specific styles only.
-   Tokens, header, footer, buttons and dark mode live in style.css.
-   Load this file AFTER style.css.
-   ======================================================================= */
-
 .sr-only{
   position:absolute; width:1px; height:1px; padding:0; margin:-1px;
   overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
 }
 
-/* ============ SPACING SCALE ============
-   Every section padding, grid gap and stack gap on this page pulls from
-   this scale so the vertical rhythm reads as one deliberate system
-   instead of a pile of one-off pixel values. */
 :root{
   --sp-1: 8px;
   --sp-2: 12px;
@@ -27,12 +17,49 @@
   --sp-11: 96px;
 }
 
+@media (max-width: 980px){
+  :root{
+    --sp-6: 32px;
+    --sp-7: 36px;
+    --sp-8: 40px;
+    --sp-9: 44px;
+    --sp-10: 48px;
+    --sp-11: 52px;
+  }
+}
+@media (max-width: 640px){
+  :root{
+    --sp-4: 20px;
+    --sp-5: 24px;
+    --sp-6: 24px;
+    --sp-7: 28px;
+    --sp-8: 28px;
+    --sp-9: 28px;
+    --sp-10: 32px;
+    --sp-11: 32px;
+  }
+}
+@media (max-width: 480px){
+  :root{
+    --sp-3: 14px;
+    --sp-4: 16px;
+    --sp-5: 20px;
+    --sp-6: 20px;
+    --sp-7: 22px;
+    --sp-8: 22px;
+    --sp-9: 22px;
+    --sp-10: 24px;
+    --sp-11: 24px;
+  }
+}
 
-/* ============ PAGE HERO — centered, premium, robust height ============
-   Fixed px heights (not vh) so the hero never collapses in a preview pane
-   or iframe that hasn't resolved its own viewport height yet. A gradient
-   fallback behind the image means the hero still reads well even before
-   the photo loads. */
+.page-hero{
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  border-radius: 0;
+  overflow: hidden;
+}
 .page-hero .hero-frame{
   position:relative; height: 480px; min-height: 480px; max-height: 480px; overflow:hidden;
   background: linear-gradient(135deg, #2a2118 0%, #1c150f 100%);
@@ -50,7 +77,6 @@
 .page-hero h1{ max-width: 14ch; }
 .page-hero p.lead{ margin: var(--sp-3) auto 0; max-width: 54ch; }
 
-
 .hero-stats{
   margin-top: var(--sp-4); display:flex; align-items:center; justify-content:center;
   gap: var(--sp-4); flex-wrap: wrap;
@@ -66,14 +92,10 @@
 @media (max-width: 560px){ .hero-stats{ gap: 14px; } .hero-stats .stat-sep{ display:none; } }
 
 @media (max-width: 640px){
-  .page-hero .hero-frame{ height: 400px; min-height: 400px; max-height: 400px; }
+  .page-hero .hero-frame{ height: auto; min-height: 400px; max-height: none; }
+  .page-hero .hero-copy{ position: relative; inset: auto; height: auto; padding: var(--sp-8) var(--sp-3); }
 }
 
-
-/* ============ FILTER + RATE BAR ============
-   Chips and segmented buttons share the exact height, radius, font and
-   weight of the site's .btn-sm so every clickable control reads as one
-   family, whether it lives in the header, here, or the CTA band. */
 .rent-controls{ background: var(--bg); border-bottom: 1px solid var(--border); z-index: 40; }
 @media (min-width: 900px){
   
@@ -117,21 +139,13 @@
   .seg-btn small{ display:block; margin: 1px 0 0; }
 }
 
-
-
 .catalog{ padding: 0; }
 .rent-cat{ padding-bottom: var(--sp-9); }
 .rent-cat[hidden]{ display:none; }
 
-/* The first VISIBLE category gets extra breathing room under the sticky
-   filter bar; every visible category after it uses the standard gap.
-   Written against [hidden] (not :first-of-type) so this stays correct
-   as the filter chips show/hide categories. */
 .rent-cat:not([hidden]){ padding-top: var(--sp-11); }
 .rent-cat:not([hidden]) ~ .rent-cat:not([hidden]){ padding-top: var(--sp-9); }
 
-/* A divider belongs to a category only when another visible category
-   follows it — so the gap before, and after, every divider is identical. */
 .rent-cat > .rule-wrap{ display:none; }
 .rent-cat:not([hidden]):has(~ .rent-cat:not([hidden])) > .rule-wrap{ display:block; }
 
@@ -215,18 +229,17 @@
   .rent-cat:not([hidden]) ~ .rent-cat:not([hidden]){ padding-top: var(--sp-6); }
 }
 @media (max-width: 640px){
-  .model{ flex-direction: column; align-items: flex-start; }
+  .model{ flex-direction: column; align-items: flex-start; justify-content: flex-start; }
+  .model-info{ flex: 1 1 auto; width: 100%; }
   .model-price{ text-align: start; padding-inline-start: 0; border-inline-start: none; padding-top: var(--sp-3); border-top: 1px dashed var(--border); width: 100%; }
 }
-
-
 
 .included{ padding-block: var(--sp-9); background: var(--surface); border-top: 1px solid var(--border); }
 .requirements{ padding-block: var(--sp-9); background: var(--bg); border-bottom: 1px solid var(--border); }
 
 .section-head{ max-width: 640px; margin-inline: auto; text-align: center; }
 .section-head .eyebrow{
-  display:inline-block; font-size: 12.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  display:inline-flex; align-items:center; justify-content:center; gap:9px; font-size: 12.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
   color: var(--rust); margin-bottom: var(--sp-2);
 }
 .section-head h2{ font-size: clamp(30px, 3.2vw, 42px); line-height: 1.05; }
@@ -261,8 +274,6 @@
 @media (max-width: 640px){
   .included .about-list{ grid-template-columns: 1fr; }
 }
-
-
 
 .cta-band{ position:relative; overflow:hidden; padding-block: var(--sp-10); text-align:center; color: #FAF5E7; }
 .cta-photo{ position:absolute; inset:0; background: linear-gradient(135deg, #2a2118 0%, #1c150f 100%); }

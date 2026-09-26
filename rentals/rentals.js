@@ -1,4 +1,3 @@
-// Category filter chips
 const chips = document.querySelectorAll('.chip[data-filter]');
 const categories = document.querySelectorAll('.rent-cat');
 
@@ -17,7 +16,6 @@ chips.forEach((chip) => {
   });
 });
 
-// Rate view toggle: hour / half-day / day
 const rateButtons = document.querySelectorAll('.seg-btn[data-rate]');
 const prices = document.querySelectorAll('.price-num[data-hour]');
 const unitLabels = document.querySelectorAll('.price-unit[data-rate-unit]');

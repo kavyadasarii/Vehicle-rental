@@ -1,21 +1,12 @@
-/* =========================================================================
-   SAFETY & REQUIREMENTS — page-specific styles
-   Loads after style.css and uses its design tokens (--bg, --text, --rust,
-   --surface, --border, etc.) so light/dark and RTL keep working the same
-   way they do on the rest of the site. Header, footer, and the theme/RTL
-   toggle buttons are styled in style.css and are not redefined here.
-   No transitions or animations are used anywhere in this file.
-   ========================================================================= */
-
-/* ---------- Photo placeholders ----------
-   Each is a fixed-ratio box with a background fill behind the <img>, so
-   the layout still looks intentional before real photos are dropped in.
-   Replace the file at the given src; no markup changes needed. */
 .sf-photo{
   position:relative; overflow:hidden; background:var(--surface);
   border:1px solid var(--border); border-radius:var(--radius-lg);
 }
 .sf-photo img{ display:block; width:100%; height:100%; object-fit:cover; }
+.eyebrow .dot{
+  display:inline-block; width:6px; height:6px; border-radius:50%;
+  background:var(--rust-soft); vertical-align:middle; margin-inline-end:9px;
+}
 
 
 .sf-hero{ background:#17110B; color:#F3EAD6; padding:60px 0; }
@@ -37,11 +28,20 @@
 .sf-fact span{ display:block; margin-top:8px; max-width:24ch; font-size:13px; line-height:1.45; color:#CFC3A5; }
 
 
-.sf-req-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:44px 40px; }
-.sf-req{ border-top:2px solid var(--rust); padding-top:22px; }
-.sf-req-num{ display:block; font-family:'Bebas Neue',sans-serif; font-weight:400; font-size:34px; line-height:1; letter-spacing:.01em; color:var(--rust-soft); }
-.sf-req h3{ margin-top:14px; font-size:24px; }
-.sf-req p{ margin-top:8px; max-width:36ch; font-size:15px; line-height:1.65; color:var(--text-soft); }
+.sf-req-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:26px; }
+.sf-req{
+  background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg);
+  padding:32px 28px 30px;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.sf-req:hover{ transform:translateY(-6px); box-shadow:var(--shadow); border-color:var(--rust-soft); }
+.sf-req-num{
+  display:block; font-family:'Bebas Neue',sans-serif; font-weight:400; font-size:38px; line-height:1;
+  letter-spacing:.01em; color:var(--border); transition: color .25s ease;
+}
+.sf-req:hover .sf-req-num{ color:var(--rust-soft); }
+.sf-req h3{ margin-top:16px; font-size:20px; }
+.sf-req p{ margin-top:8px; max-width:34ch; font-size:14.5px; line-height:1.65; color:var(--text-soft); }
 
 
 .sf-band{ background:var(--surface); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
@@ -51,8 +51,12 @@
 .sf-note{ margin:14px 0 0; font-size:13.5px; line-height:1.55; color:var(--text-soft); max-width:70ch; }
 
 
-.sf-tools{ display:grid; grid-template-columns:1fr 1.2fr; gap:26px; align-items:start; }
-.sf-tool{ background:var(--bg); border:1px solid var(--border); border-radius:var(--radius-lg); padding:30px 30px 32px; }
+.sf-tools{ display:grid; grid-template-columns:1fr 1.2fr; gap:26px; align-items:stretch; }
+.sf-tool{
+  background:var(--bg); border:1px solid var(--border); border-radius:var(--radius-lg); padding:30px 30px 32px;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.sf-tool:hover{ transform:translateY(-6px); box-shadow:var(--shadow); border-color:var(--rust-soft); }
 .sf-tool .sf-tool-head{ display:flex; flex-direction:column; gap:8px; padding-bottom:18px; border-bottom:1px solid var(--border); }
 .sf-tool-kicker{ font-size:11.5px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--rust); }
 .sf-tool h3{ font-size:26px; }
@@ -108,16 +112,24 @@
 
 
 .sf-rules{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border); border:1px solid var(--border); border-radius:var(--radius-lg); overflow:hidden; }
-.sf-rule{ background:var(--surface); padding:28px 28px 30px; }
-.sf-rule-num{ display:block; font-family:'Bebas Neue',sans-serif; font-weight:400; font-size:32px; line-height:1; letter-spacing:.01em; color:var(--rust-soft); }
-.sf-rule h3{ margin-top:14px; font-size:22px; }
-.sf-rule p{ margin:8px 0 0; font-size:14.5px; line-height:1.62; color:var(--text-soft); max-width:36ch; }
+.sf-rule{
+  background:var(--surface); padding:30px 28px 32px;
+  transition: background .25s ease;
+}
+.sf-rule:hover{ background:var(--bg); }
+.sf-rule-num{
+  display:block; font-family:'Bebas Neue',sans-serif; font-weight:400; font-size:34px; line-height:1;
+  letter-spacing:.01em; color:var(--rust-soft);
+}
+.sf-rule h3{ margin-top:14px; font-size:20px; }
+.sf-rule p{ margin:8px 0 0; font-size:14px; line-height:1.62; color:var(--text-soft); max-width:34ch; }
 
 
 .sf-gear{ display:grid; grid-template-columns:1fr 1fr; gap:44px; }
+.sf-gear > div{ text-align:center; }
 .sf-gear-photo{ aspect-ratio:4/3; margin-bottom:22px; }
-.sf-gear h3{ font-size:28px; padding-bottom:14px; border-bottom:2px solid var(--rust); }
-.sf-check-list{ list-style:none; margin:24px 0 0; padding:0; }
+.sf-gear h3{ display:inline-block; font-size:28px; padding-bottom:14px; border-bottom:2px solid var(--rust); }
+.sf-check-list{ list-style:none; margin:24px 0 0; padding:0; text-align:start; }
 .sf-check-list li{ padding:18px 0; border-bottom:1px solid var(--border); }
 .sf-check-list li:first-child{ padding-top:0; }
 .sf-check-list li:last-child{ padding-bottom:0; border-bottom:none; }
@@ -126,10 +138,15 @@
 
 
 .sf-help{ display:grid; grid-template-columns:1fr 1.5fr; gap:56px; padding:52px; background:#1C150E; color:#F3EAD6; border-radius:var(--radius-lg); }
+.sf-help-intro{ text-align:center; }
+.sf-help-intro .eyebrow{
+  display:inline-block; font-size:12.5px; font-weight:600; letter-spacing:.1em;
+  text-transform:uppercase; color:#F0A374; margin-bottom:16px;
+}
 .sf-help h2{ font-size:clamp(32px,3.6vw,48px); line-height:1.04; color:#FAF5E7; }
-.sf-help > div > p{ margin:16px 0 0; max-width:38ch; font-size:15.5px; line-height:1.65; color:#D9CDAE; }
-.sf-numbers{ margin-top:28px; display:flex; flex-direction:column; border-top:1px solid rgba(243,234,214,.18); }
-.sf-number-card{ display:flex; flex-direction:column; gap:5px; padding:18px 0; border-bottom:1px solid rgba(243,234,214,.16); }
+.sf-help > div > p{ margin:16px auto 0; max-width:38ch; font-size:15.5px; line-height:1.65; color:#D9CDAE; }
+.sf-numbers{ margin-top:28px; display:flex; flex-direction:column; align-items:center; border-top:1px solid rgba(243,234,214,.18); }
+.sf-number-card{ display:flex; flex-direction:column; align-items:center; gap:5px; padding:18px 0; border-bottom:1px solid rgba(243,234,214,.16); width:100%; }
 .sf-number-value{ font-family:'Bebas Neue',sans-serif; font-weight:400; font-size:26px; letter-spacing:.02em; color:#FAF5E7; }
 .sf-number-label{ font-size:12px; font-weight:600; letter-spacing:.05em; text-transform:uppercase; color:#B9AC8E; }
 .sf-number-card:hover .sf-number-value{ color:#F0A374; }

@@ -1,5 +1,3 @@
-// Safety & Requirements page — measurement tools
-// (Theme toggle, RTL toggle, and menus are handled by the shared script.js)
 (function () {
   const $ = (id) => document.getElementById(id);
 
@@ -87,10 +85,6 @@
     d.textContent = text;
     return d;
   }
-
-  // Builds the ok/not-eligible pill. Styling (including the small status
-  // dot) is handled entirely by .sf-pill/.sf-pill::before in CSS, so no
-  // icon markup is created here.
   function pill(ok) {
     const span = document.createElement('span');
     span.className = 'sf-pill ' + (ok ? 'ok' : 'no');

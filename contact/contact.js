@@ -1,7 +1,3 @@
-/* =======================================================================
-   CONTACT PAGE — page-specific behaviour only.
-   RTL toggle and dark/light theme toggle live in ../home/script.js.
-   ======================================================================= */
 (function () {
   "use strict";
 

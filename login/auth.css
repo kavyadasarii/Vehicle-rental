@@ -1,8 +1,3 @@
-/* =======================================================================
-   TRAIL RIDGE — Auth pages (login / signup)
-   Loaded after style.css — reuses its tokens, fonts and .btn/.icon-btn
-   classes. Adds only what login/signup need, plus a no-scroll layout.
-   ======================================================================= */
 
 html.auth-html, .auth-html body{ height: 100%; }
 body.auth-page{
